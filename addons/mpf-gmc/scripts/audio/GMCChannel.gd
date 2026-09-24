@@ -68,7 +68,7 @@ func play_with_settings(settings: Dictionary) -> AudioStream:
 		else:
 			self._connect_loop(settings["loops"])
 
-	# Support marker events
+	# TODO: Support marker events
 	if settings.get("events_when_played"):
 		for e in settings["events_when_played"]:
 			self.mpf.server.send_event(e)

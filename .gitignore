@@ -1,3 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# local data files from testing
+/data/audits.yaml
+/data/high_scores.yaml
+
+# local logs
+/logs/

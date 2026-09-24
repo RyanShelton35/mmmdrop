@@ -69,7 +69,7 @@ func fail(message: String, args=null) -> void:
 	assert(false, message % args)
 
 static func _log(l_name: String, level: String, message: String, args=null) -> String:
-	# Incorporate ProjectSettings.get_setting("logging/file_logging/enable_file_logging")
+	# TODO: Incorporate ProjectSettings.get_setting("logging/file_logging/enable_file_logging")
 	# Get datetime to dictionary
 	var dt=Time.get_datetime_dict_from_system()
 	# Format and print with message

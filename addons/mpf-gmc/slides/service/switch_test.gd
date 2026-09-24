@@ -51,7 +51,7 @@ func _on_service(payload: Dictionary) -> void:
 		switch_to_remove.queue_free()
 
 func _get_active_switches() -> void:
-	# Get switches that don't have labels
+	# TODO: Get switches that don't have labels
 	MPF.server.send_service("list_switches", ["name", "label", "state"])
 
 func _update_active_switches(payload: Dictionary) -> void:

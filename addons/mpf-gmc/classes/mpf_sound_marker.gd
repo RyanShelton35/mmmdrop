@@ -9,7 +9,7 @@ const FLOAT_MARGIN = 0.015
 @export var event: String
 var _last_marked: float
 
-#Need to reset on each loop
+# TODO: Need to reset on each loop
 func reset() -> void:
 	self._last_marked = 0.0
 

@@ -188,7 +188,7 @@ func add_event_handler(event: String, handler: Callable) -> void:
 		self.log.debug("Adding handler %s to event trigger for event '%s'", [handler, event])
 
 func remove_event_handler(event: String, handler: Callable) -> void:
-	# Any fallback logic or error catching if it's not here?
+	# TODO: Any fallback logic or error catching if it's not here?
 	self.log.debug("Removing handler %s from event trigger for event '%s'", [handler, event])
 	registered_handlers[event].erase(handler)
 	# If there are no more handlers, unsubscribe from this event
@@ -219,7 +219,7 @@ func stop(is_exiting: bool = false) -> void:
 		self.on_disconnect()
 		# Set an exit code so we know MPF is the cause of the exit
 		get_tree().quit(6)
-		# Add a configuration option to exit-on-disconnect and if false,
+		# TODO: Add a configuration option to exit-on-disconnect and if false,
 		# call self.deferred_scene("res://Main.tscn") instead of quit()
 
 # Use the BCP syntax to define the type
@@ -288,6 +288,7 @@ func _thread_poll(_userdata=null) -> void:
 	while _client:
 		# If the mutex is locked, the system is shutting down
 		if not _mutex.try_lock():
+			self.log.info("BCP poll thread exiting: mutex unavailable.")
 			return
 		var err = _client.poll()
 		if err != OK:
@@ -305,6 +306,11 @@ func _thread_poll(_userdata=null) -> void:
 
 		var bytes = _client.get_available_bytes()
 		if not bytes:
+			# Release the mutex before looping. Mutex is recursive, so skipping
+			# the unlock at the bottom of this loop leaks one lock level per
+			# idle poll instead of deadlocking, and try_lock() above fails for
+			# good once the recursion counter saturates.
+			_mutex.unlock()
 			OS.delay_msec(delay)
 			continue
 

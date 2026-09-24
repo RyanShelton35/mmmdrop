@@ -9,7 +9,7 @@ extends LoggingNode
 
 const CONFIG_PATH = "res://gmc.cfg"
 const LOCAL_CONFIG_PATH = "user://gmc.local.cfg"
-const MPF_MIN_VERSION = "0.80.0.dev10"
+const MPF_MIN_VERSION = "0.80.0"
 
 var game
 var media
@@ -78,7 +78,7 @@ func _init():
 			["media", preload("scripts/media.gd"), "GMCMedia", true]
 	]:
 		var script: String = self.get_config_value("gmc", s[2], '')
-		# Add logging configuration as init parameters so logging
+		# TODO: Add logging configuration as init parameters so logging
 		# is available in the _init() methods of all scripts
 		var script_inst: Resource = load(script) if script else s[1]
 		# For the main server nodes (GMCCoreScriptNode) pass this instance to the constructor

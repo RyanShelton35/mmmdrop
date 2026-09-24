@@ -66,7 +66,7 @@ func duck(settings) -> void:
 	self._duck_release_timer.start(settings.duration)
 
 func duck_release() -> void:
-	# Use a uuid to identify which ducking to release
+	# TODO: Use a uuid to identify which ducking to release
 	# Remove this duck from the list of duckings
 	var last_duck: DuckSettings = self._duck_release_timer.get_meta("ducking")
 	self.duckings.erase(last_duck)
@@ -123,7 +123,7 @@ func play(filename: String, settings: Dictionary = {}) -> void:
 	if filename.left(4) == "res:":
 		filepath = filename
 	else:
-		# Clean this up now that sounds are indexed by MC
+		# TODO: Clean this up now that sounds are indexed by MC
 		filepath = "res://assets/%s/%s" % [self.name, filename]
 	var available_channel: AudioStreamPlayer
 	# REFACT:R is this needed?
@@ -169,14 +169,14 @@ func play(filename: String, settings: Dictionary = {}) -> void:
 
 	if settings.get("ducking", false):
 		if stream is AudioStreamRandomizer:
-			# Get current stream from AudioStreamRandomizer:
+			# TODO: Get current stream from AudioStreamRandomizer:
 			# https://github.com/godotengine/godot/pull/88437
 			self.log.warning("AudioStreamRandomizer ducking is not supported. Waiting for a Godot update.")
 			return
 		# If this came from an MPFSoundAsset the ducking is already configured
 		var duck_settings: DuckSettings = settings.ducking if settings.ducking is DuckSettings else DuckSettings.new(settings.ducking)
 		duck_settings.calculate_release_time(Time.get_ticks_msec(), stream)
-		# Generate a uuid for the ducking and append to stream metadata
+		# TODO: Generate a uuid for the ducking and append to stream metadata
 		duck_settings.bus.duck(duck_settings)
 
 func clear_context(context_name: String) -> void:
@@ -186,7 +186,7 @@ func clear_context(context_name: String) -> void:
 		channel.stream.get_meta("context") == context_name and \
 		channel.playing and not channel.get_meta("is_stopping", false):
 			channel.stop_with_settings()
-	# Only clear the ducking of streams impacted by the context
+	# TODO: Only clear the ducking of streams impacted by the context
 	self._abort_ducking_check()
 
 func clear_queue() -> void:
@@ -259,7 +259,7 @@ func _create_duck_tween(attenuation: float, duration: float) -> Tween:
 						 "Please specify attenuation as a value from 0.0 (no change) to 1.0 (full mute)")
 		attenuation = 0.0
 	var duck_tween = self.create_tween()
-	# Integrate default values
+	# TODO: Integrate default values
 	var full_volume = db_to_linear(self._full_volume_db)
 	# Attenuation value is the percentage of full volume to reduce.
 	var target_volume = full_volume * (1.0 - attenuation)
