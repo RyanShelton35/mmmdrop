@@ -1,12 +1,18 @@
-# v0.27
+# v0.96
 
 # mmmdrop
 
-# to run without hardware
+## Starting the game
 
-mpf -X
+to run on the MPF smart virtual platform
 
-# to run with hardware
+```mpf -X```
 
-mpf
+to run on FAST hardware, use
+
+```mpf```
+
+## Unit tests
+
+```python -m unittest discover -s tests```
 

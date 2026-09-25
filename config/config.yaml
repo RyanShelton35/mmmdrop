@@ -92,7 +92,7 @@ machine_vars:
     value_type: int
   master_volume:
     initial_value: settings.master_volume
-    value_type: float
+    value_type: str
     persist: True
   this_game_match_video:
     initial_value: 0

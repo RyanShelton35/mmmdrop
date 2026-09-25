@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://3uqv2pxseqgw"]
+[gd_scene format=3 uid="uid://3uqv2pxseqgw"]
 
 [ext_resource type="Script" uid="uid://d4ky3s4bg1ouq" path="res://addons/mpf-gmc/classes/mpf_widget.gd" id="1_pclkw"]
 [ext_resource type="FontFile" uid="uid://b2or65be6mpbg" path="res://fonts/ratcage.TTF" id="2_bqhhf"]
@@ -39,7 +39,7 @@ _data = {
 &"SlideInLeft": SubResource("Animation_2soeo")
 }
 
-[node name="version" type="Control" node_paths=PackedStringArray("animation_player")]
+[node name="version" type="Control" unique_id=1068833407 node_paths=PackedStringArray("animation_player")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -47,7 +47,7 @@ offset_bottom = 40.0
 script = ExtResource("1_pclkw")
 animation_player = NodePath("version/AnimationPlayer")
 
-[node name="version" type="Label" parent="."]
+[node name="version" type="Label" parent="." unique_id=734339806]
 top_level = true
 layout_mode = 0
 offset_left = 480.0
@@ -57,10 +57,8 @@ offset_bottom = 546.0
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("2_bqhhf")
 theme_override_font_sizes/font_size = 96
-text = "Version 0.95"
+text = "Version 0.96"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="version"]
-libraries = {
-&"": SubResource("AnimationLibrary_8ja0h")
-}
-autoplay = "RESET"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="version" unique_id=271583286]
+libraries/ = SubResource("AnimationLibrary_8ja0h")
+autoplay = &"RESET"
