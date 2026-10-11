@@ -1,0 +1,93 @@
+#config_version=6
+
+slide_player:
+  mode_attract_started{machine.game_just_played==0}:
+    loading:
+      action: remove
+    attract_load:
+      action: play
+      priority: 1000000
+  timer_attract_intro_timer_complete{machine.game_just_played==0}:
+    attract_load:
+      action: remove
+    attract:
+      action: play
+      priority: 10000
+  mode_attract_started{machine.game_just_played==1}:
+    loading:
+      action: remove
+    match_normal_slide:
+      action: remove
+    match_mahjong_slide:
+      action: remove
+    match_mother_slide:
+      action: remove
+    match_grammy_slide:
+      action: remove
+    no_match_normal_slide:
+      action: remove
+    no_match_mahjong_slide:
+      action: remove
+    no_match_mother_slide:
+      action: remove
+    no_match_grammy_slide:
+      action: remove
+    attract:
+      action: play
+      priority: 1000
+  mca_sequence_hit:
+    attract_load:
+      action: remove
+    attract:
+      action: remove
+    ghostbusters:
+      action: play
+      priority: 1100000
+  timer_mca_attract_video_timer_complete:
+    ghostbusters:
+      action: remove
+    attract:
+      action: play
+      priority: 1000
+  adr_sequence_hit:
+    attract_load:
+      action: remove
+    attract:
+      action: remove
+    friends:
+      action: play
+      priority: 1100000
+  timer_adr_attract_video_timer_complete:
+    friends:
+      action: remove
+    attract:
+      action: play
+      priority: 1000
+  christmas_sequence_hit:
+    attract_load:
+      action: remove
+    attract:
+      action: remove
+    jinglebells:
+      action: play
+      priority: 1100000
+  timer_christmas_attract_video_timer_complete:
+    jinglebells:
+      action: remove
+    attract:
+      action: play
+      priority: 1000
+  muppets_sequence_hit:
+    attract_load:
+      action: remove
+    attract:
+      action: remove
+    beastiemuppets:
+      action: play
+      priority: 1100000
+  timer_muppets_attract_video_timer_complete:
+    beastiemuppets:
+      action: remove
+    attract:
+      action: play
+      priority: 1000

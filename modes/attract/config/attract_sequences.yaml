@@ -1,0 +1,103 @@
+#config_version=6
+
+sequences:
+  mca_sequence:
+    events:
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_left_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_left_flipper_active
+    - s_right_flipper_active
+    - s_left_flipper_active
+    disable_events: game_starting
+    reset_on_complete: True
+    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel, christmas_sequence_hit, muppets_sequence_hit
+    events_when_complete: mca_sequence_hit
+  adr_sequence:
+    events:
+    - s_right_flipper_active
+    - s_left_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_left_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_left_flipper_active
+    disable_events: game_starting
+    reset_on_complete: True
+    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel, christmas_sequence_hit, muppets_sequence_hit
+    events_when_complete: adr_sequence_hit
+  christmas_sequence:
+    events:
+      - s_right_flipper_active
+      - s_left_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+    disable_events: game_starting
+    reset_on_complete: True
+    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel, christmas_sequence_hit, muppets_sequence_hit
+    events_when_complete: christmas_sequence_hit
+  muppets_sequence:
+    events:
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+    disable_events: game_starting
+    reset_on_complete: True
+    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel, christmas_sequence_hit, muppets_sequence_hit
+    events_when_complete: muppets_sequence_hit
+
+    

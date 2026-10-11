@@ -1,0 +1,64 @@
+#config_version=6
+
+sound_player:
+  mode_attract_started{machine.game_just_played==0}:
+    attract_crowd:
+      bus: effects
+      action: play
+  mode_attract_started{machine.game_just_played==1}:
+    postgame_instrumental_random:
+      action: replace
+      bus: music
+      fade_out: 5s
+  mca_sequence_hit:
+    attract_crowd:
+      action: stop
+      bus: effects
+    postgame_instrumental_random:
+      action: stop
+      bus: music
+  timer_mca_attract_video_timer_complete:
+    attract_crowd:
+      bus: effects
+      action: play
+  adr_sequence_hit:
+    attract_crowd:
+      action: stop
+      bus: effects
+    postgame_instrumental_random:
+      action: stop
+      bus: music
+  timer_adr_attract_video_timer_started:
+    friendsmusic:
+      action: play
+      bus: music
+  slide_friends_removed:
+    friendsmusic:
+      action: stop
+      bus: music
+  timer_adr_attract_video_timer_complete:
+    attract_crowd:
+      bus: effects
+      action: play
+  christmas_sequence_hit:
+    attract_crowd:
+      action: stop
+      bus: effects
+    postgame_instrumental_random:
+      action: stop
+      bus: music
+  timer_christmas_attract_video_timer_complete:
+    attract_crowd:
+      bus: effects
+      action: play
+  muppets_sequence_hit:
+    attract_crowd:
+      action: stop
+      bus: effects
+    postgame_instrumental_random:
+      action: stop
+      bus: music
+  timer_muppets_attract_video_timer_complete:
+    attract_crowd:
+      bus: effects
+      action: play

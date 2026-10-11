@@ -1,31 +1,3543 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhjp6sktkq11m"]
+[gd_scene format=3 uid="uid://c1r578cctubfg"]
 
 [ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_o4v0r"]
-[ext_resource type="Texture2D" uid="uid://bb5nodn5nj5cm" path="res://assets/BeastieGroup1.jpg" id="2_1f1fh"]
-[ext_resource type="Script" uid="uid://bov7mrgxslshq" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="3_1f1fh"]
-[ext_resource type="VideoStream" uid="uid://81gfeefukvll" path="res://modes/base/slides/NYEVideo.ogv" id="3_tj1lo"]
+[ext_resource type="Texture2D" uid="uid://bb5nodn5nj5cm" path="res://assets/BeastieGroup1.jpg" id="2_vj3w2"]
+[ext_resource type="VideoStream" uid="uid://81gfeefukvll" path="res://modes/base/slides/NYEVideo.ogv" id="3_1f1fh"]
+[ext_resource type="Script" uid="uid://bov7mrgxslshq" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="4_tj1lo"]
+[ext_resource type="Script" uid="uid://dpe3dq8axt3g7" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="5_tj1lo"]
+[ext_resource type="Texture2D" uid="uid://cehgho5yba4jf" path="res://assets/beastie_pinball_logo.png" id="6_4o4im"]
+[ext_resource type="FontFile" uid="uid://b2or65be6mpbg" path="res://fonts/ratcage.TTF" id="6_p3rss"]
+[ext_resource type="Script" uid="uid://bfvhmv2eirpua" path="res://addons/mpf-gmc/classes/mpf_variable.gd" id="8_8pccq"]
+[ext_resource type="Texture2D" uid="uid://cxbgmasdcuyvv" path="res://assets/mca_pic.png" id="9_rqkls"]
+[ext_resource type="Texture2D" uid="uid://d1gvfvtav3ctp" path="res://assets/fast_logo.png" id="10_8pccq"]
+[ext_resource type="Texture2D" uid="uid://biexfgwcijepg" path="res://assets/logo_mpf.png" id="11_df38b"]
+[ext_resource type="Texture2D" uid="uid://bncxpwddt75c4" path="res://assets/nwpas_2026_poster.png" id="12_pw77f"]
+[ext_resource type="Texture2D" uid="uid://dnckc1fhaq3ut" path="res://assets/RiotLogo-1-2.webp" id="13_nlrlk"]
 
-[node name="Attract" type="Control"]
+[sub_resource type="Animation" id="Animation_41ue2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(976, 504)]
+}
+
+[sub_resource type="Animation" id="Animation_1f5vj"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2350, 504), Vector2(2304.2, 504), Vector2(2258.4, 504), Vector2(2212.6, 504), Vector2(2166.8, 504), Vector2(2121, 504), Vector2(2075.2, 504), Vector2(2029.4, 504), Vector2(1983.6, 504), Vector2(1937.8, 504), Vector2(1892, 504), Vector2(1846.2, 504), Vector2(1800.4, 504), Vector2(1754.6, 504), Vector2(1708.8, 504), Vector2(1663, 504), Vector2(1617.2, 504), Vector2(1571.4, 504), Vector2(1525.6, 504), Vector2(1479.8, 504), Vector2(1434, 504), Vector2(1388.2, 504), Vector2(1342.4, 504), Vector2(1296.6, 504), Vector2(1250.8, 504), Vector2(1205, 504), Vector2(1159.2, 504), Vector2(1113.4, 504), Vector2(1067.6, 504), Vector2(1021.8, 504), Vector2(976, 504)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6eao"]
+_data = {
+&"RESET": SubResource("Animation_41ue2"),
+&"SlideInLeft": SubResource("Animation_1f5vj")
+}
+
+[sub_resource type="Animation" id="Animation_828nl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(608, 440)]
+}
+
+[sub_resource type="Animation" id="Animation_38imr"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 440), Vector2(1876.27, 440), Vector2(1832.53, 440), Vector2(1788.8, 440), Vector2(1745.07, 440), Vector2(1701.33, 440), Vector2(1657.6, 440), Vector2(1613.87, 440), Vector2(1570.13, 440), Vector2(1526.4, 440), Vector2(1482.67, 440), Vector2(1438.93, 440), Vector2(1395.2, 440), Vector2(1351.47, 440), Vector2(1307.73, 440), Vector2(1264, 440), Vector2(1220.27, 440), Vector2(1176.53, 440), Vector2(1132.8, 440), Vector2(1089.07, 440), Vector2(1045.33, 440), Vector2(1001.6, 440), Vector2(957.867, 440), Vector2(914.133, 440), Vector2(870.4, 440), Vector2(826.667, 440), Vector2(782.933, 440), Vector2(739.2, 440), Vector2(695.467, 440), Vector2(651.733, 440), Vector2(608, 440)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_db5fx"]
+_data = {
+&"RESET": SubResource("Animation_828nl"),
+&"SlideInLeft": SubResource("Animation_38imr")
+}
+
+[sub_resource type="Animation" id="Animation_1l6vr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(408, 456)]
+}
+
+[sub_resource type="Animation" id="Animation_p77hr"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 456), Vector2(1869.6, 456), Vector2(1819.2, 456), Vector2(1768.8, 456), Vector2(1718.4, 456), Vector2(1668, 456), Vector2(1617.6, 456), Vector2(1567.2, 456), Vector2(1516.8, 456), Vector2(1466.4, 456), Vector2(1416, 456), Vector2(1365.6, 456), Vector2(1315.2, 456), Vector2(1264.8, 456), Vector2(1214.4, 456), Vector2(1164, 456), Vector2(1113.6, 456), Vector2(1063.2, 456), Vector2(1012.8, 456), Vector2(962.4, 456), Vector2(912, 456), Vector2(861.6, 456), Vector2(811.2, 456), Vector2(760.8, 456), Vector2(710.4, 456), Vector2(660, 456), Vector2(609.6, 456), Vector2(559.2, 456), Vector2(508.8, 456), Vector2(458.4, 456), Vector2(408, 456)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_df38b"]
+_data = {
+&"RESET": SubResource("Animation_1l6vr"),
+&"SlideInLeft": SubResource("Animation_p77hr")
+}
+
+[sub_resource type="Animation" id="Animation_haxrq"]
+resource_name = "FadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1, 1.03333, 1.06667, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333, 1.36667, 1.4, 1.43333, 1.46667, 1.5, 1.53333, 1.56667, 1.6, 1.63333, 1.66667, 1.7, 1.73333, 1.76667, 1.8, 1.83333, 1.86667, 1.9, 1.93333, 1.96667, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.966667), Color(1, 1, 1, 0.933333), Color(1, 1, 1, 0.9), Color(1, 1, 1, 0.866667), Color(1, 1, 1, 0.833333), Color(1, 1, 1, 0.8), Color(1, 1, 1, 0.766667), Color(1, 1, 1, 0.733333), Color(1, 1, 1, 0.7), Color(1, 1, 1, 0.666667), Color(1, 1, 1, 0.633333), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.566667), Color(1, 1, 1, 0.533333), Color(1, 1, 1, 0.5), Color(1, 1, 1, 0.466667), Color(1, 1, 1, 0.433333), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.366667), Color(1, 1, 1, 0.333333), Color(1, 1, 1, 0.3), Color(1, 1, 1, 0.266667), Color(1, 1, 1, 0.233333), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.166667), Color(1, 1, 1, 0.133333), Color(1, 1, 1, 0.1), Color(1, 1, 1, 0.0666659), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334), Color(1, 1, 1, 0.0333334)]
+}
+
+[sub_resource type="Animation" id="Animation_4i5xf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pw77f"]
+_data = {
+&"FadeIn": SubResource("Animation_haxrq"),
+&"RESET": SubResource("Animation_4i5xf")
+}
+
+[sub_resource type="Animation" id="Animation_a2pur"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(968, 504)]
+}
+
+[sub_resource type="Animation" id="Animation_0rcuk"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2350, 504), Vector2(2303.93, 504), Vector2(2257.87, 504), Vector2(2211.8, 504), Vector2(2165.73, 504), Vector2(2119.67, 504), Vector2(2073.6, 504), Vector2(2027.53, 504), Vector2(1981.47, 504), Vector2(1935.4, 504), Vector2(1889.33, 504), Vector2(1843.27, 504), Vector2(1797.2, 504), Vector2(1751.13, 504), Vector2(1705.07, 504), Vector2(1659, 504), Vector2(1612.93, 504), Vector2(1566.87, 504), Vector2(1520.8, 504), Vector2(1474.73, 504), Vector2(1428.67, 504), Vector2(1382.6, 504), Vector2(1336.53, 504), Vector2(1290.47, 504), Vector2(1244.4, 504), Vector2(1198.33, 504), Vector2(1152.27, 504), Vector2(1106.2, 504), Vector2(1060.13, 504), Vector2(1014.07, 504), Vector2(968, 504)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rqkls"]
+_data = {
+&"RESET": SubResource("Animation_a2pur"),
+&"SlideInLeft": SubResource("Animation_0rcuk")
+}
+
+[sub_resource type="Animation" id="Animation_xcbv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_f2lor"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nlrlk"]
+_data = {
+&"RESET": SubResource("Animation_xcbv2"),
+&"SlideInLeft": SubResource("Animation_f2lor")
+}
+
+[sub_resource type="Animation" id="Animation_w5fd8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_s3nnd"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2soeo"]
+_data = {
+&"RESET": SubResource("Animation_w5fd8"),
+&"SlideInLeft": SubResource("Animation_s3nnd")
+}
+
+[sub_resource type="Animation" id="Animation_jogaq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8ja0h"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p77hr"]
+_data = {
+&"RESET": SubResource("Animation_jogaq"),
+&"SlideInLeft": SubResource("Animation_8ja0h")
+}
+
+[sub_resource type="Animation" id="Animation_b7eun"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gw4em"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0rcuk"]
+_data = {
+&"RESET": SubResource("Animation_b7eun"),
+&"SlideInLeft": SubResource("Animation_gw4em")
+}
+
+[sub_resource type="Animation" id="Animation_t4urd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xbkdq"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7lbv0"]
+_data = {
+&"RESET": SubResource("Animation_t4urd"),
+&"SlideInLeft": SubResource("Animation_xbkdq")
+}
+
+[sub_resource type="Animation" id="Animation_xqy3n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y0f4m"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbrrs"]
+_data = {
+&"RESET": SubResource("Animation_xqy3n"),
+&"SlideInLeft": SubResource("Animation_y0f4m")
+}
+
+[sub_resource type="Animation" id="Animation_77hdt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ss35r"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6qni"]
+_data = {
+&"RESET": SubResource("Animation_77hdt"),
+&"SlideInLeft": SubResource("Animation_ss35r")
+}
+
+[sub_resource type="Animation" id="Animation_8pccq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rqkls"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w5fd8"]
+_data = {
+&"RESET": SubResource("Animation_8pccq"),
+&"SlideInLeft": SubResource("Animation_rqkls")
+}
+
+[sub_resource type="Animation" id="Animation_2soeo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7lbv0"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqy3n"]
+_data = {
+&"RESET": SubResource("Animation_2soeo"),
+&"SlideInLeft": SubResource("Animation_7lbv0")
+}
+
+[sub_resource type="Animation" id="Animation_5o1rf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_siavc"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2lor"]
+_data = {
+&"RESET": SubResource("Animation_5o1rf"),
+&"SlideInLeft": SubResource("Animation_siavc")
+}
+
+[sub_resource type="Animation" id="Animation_cbrrs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q6qni"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yjqog"]
+_data = {
+&"RESET": SubResource("Animation_cbrrs"),
+&"SlideInLeft": SubResource("Animation_q6qni")
+}
+
+[sub_resource type="Animation" id="Animation_iy63k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qinox"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_brr32"]
+_data = {
+&"RESET": SubResource("Animation_iy63k"),
+&"SlideInLeft": SubResource("Animation_qinox")
+}
+
+[sub_resource type="Animation" id="Animation_c7vje"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oh26q"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_155hm"]
+_data = {
+&"RESET": SubResource("Animation_c7vje"),
+&"SlideInLeft": SubResource("Animation_oh26q")
+}
+
+[sub_resource type="Animation" id="Animation_e2u71"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b5uta"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t4x2w"]
+_data = {
+&"RESET": SubResource("Animation_e2u71"),
+&"SlideInLeft": SubResource("Animation_b5uta")
+}
+
+[sub_resource type="Animation" id="Animation_12fbw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(664, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_un6dm"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 400), Vector2(1878.13, 400), Vector2(1836.27, 400), Vector2(1794.4, 400), Vector2(1752.53, 400), Vector2(1710.67, 400), Vector2(1668.8, 400), Vector2(1626.93, 400), Vector2(1585.07, 400), Vector2(1543.2, 400), Vector2(1501.33, 400), Vector2(1459.47, 400), Vector2(1417.6, 400), Vector2(1375.73, 400), Vector2(1333.87, 400), Vector2(1292, 400), Vector2(1250.13, 400), Vector2(1208.27, 400), Vector2(1166.4, 400), Vector2(1124.53, 400), Vector2(1082.67, 400), Vector2(1040.8, 400), Vector2(998.933, 400), Vector2(957.067, 400), Vector2(915.2, 400), Vector2(873.333, 400), Vector2(831.467, 400), Vector2(789.6, 400), Vector2(747.733, 400), Vector2(705.867, 400), Vector2(664, 400)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wiu21"]
+_data = {
+&"RESET": SubResource("Animation_12fbw"),
+&"SlideInLeft": SubResource("Animation_un6dm")
+}
+
+[sub_resource type="Animation" id="Animation_ww6ik"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hfmrv"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(1208.33, 0), Vector2(1166.67, 0), Vector2(1125, 0), Vector2(1083.33, 0), Vector2(1041.67, 0), Vector2(1000, 0), Vector2(958.333, 0), Vector2(916.667, 0), Vector2(875, 0), Vector2(833.333, 0), Vector2(791.667, 0), Vector2(750, 0), Vector2(708.333, 0), Vector2(666.667, 0), Vector2(625, 0), Vector2(583.333, 0), Vector2(541.667, 0), Vector2(500, 0), Vector2(458.333, 0), Vector2(416.667, 0), Vector2(375, 0), Vector2(333.333, 0), Vector2(291.667, 0), Vector2(250, 0), Vector2(208.333, 0), Vector2(166.667, 0), Vector2(125, 0), Vector2(83.3334, 0), Vector2(41.6667, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4bfbl"]
+_data = {
+&"RESET": SubResource("Animation_ww6ik"),
+&"SlideInLeft": SubResource("Animation_hfmrv")
+}
+
+[sub_resource type="Animation" id="Animation_6yexs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(408, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_e5pqw"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 160), Vector2(1869.6, 160), Vector2(1819.2, 160), Vector2(1768.8, 160), Vector2(1718.4, 160), Vector2(1668, 160), Vector2(1617.6, 160), Vector2(1567.2, 160), Vector2(1516.8, 160), Vector2(1466.4, 160), Vector2(1416, 160), Vector2(1365.6, 160), Vector2(1315.2, 160), Vector2(1264.8, 160), Vector2(1214.4, 160), Vector2(1164, 160), Vector2(1113.6, 160), Vector2(1063.2, 160), Vector2(1012.8, 160), Vector2(962.4, 160), Vector2(912, 160), Vector2(861.6, 160), Vector2(811.2, 160), Vector2(760.8, 160), Vector2(710.4, 160), Vector2(660, 160), Vector2(609.6, 160), Vector2(559.2, 160), Vector2(508.8, 160), Vector2(458.4, 160), Vector2(408, 160)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1k0dd"]
+_data = {
+&"RESET": SubResource("Animation_6yexs"),
+&"SlideInLeft": SubResource("Animation_e5pqw")
+}
+
+[sub_resource type="Animation" id="Animation_qkqtb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, 272)]
+}
+
+[sub_resource type="Animation" id="Animation_wytay"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 272), Vector2(1855.73, 272), Vector2(1791.47, 272), Vector2(1727.2, 272), Vector2(1662.93, 272), Vector2(1598.67, 272), Vector2(1534.4, 272), Vector2(1470.13, 272), Vector2(1405.87, 272), Vector2(1341.6, 272), Vector2(1277.33, 272), Vector2(1213.07, 272), Vector2(1148.8, 272), Vector2(1084.53, 272), Vector2(1020.27, 272), Vector2(956, 272), Vector2(891.733, 272), Vector2(827.467, 272), Vector2(763.2, 272), Vector2(698.933, 272), Vector2(634.667, 272), Vector2(570.4, 272), Vector2(506.133, 272), Vector2(441.867, 272), Vector2(377.6, 272), Vector2(313.333, 272), Vector2(249.067, 272), Vector2(184.8, 272), Vector2(120.533, 272), Vector2(56.2667, 272), Vector2(-8, 272)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpt00"]
+_data = {
+&"RESET": SubResource("Animation_qkqtb"),
+&"SlideInLeft": SubResource("Animation_wytay")
+}
+
+[sub_resource type="Animation" id="Animation_rvwh2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(944, 632)]
+}
+
+[sub_resource type="Animation" id="Animation_cpjl7"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 632), Vector2(1887.47, 632), Vector2(1854.93, 632), Vector2(1822.4, 632), Vector2(1789.87, 632), Vector2(1757.33, 632), Vector2(1724.8, 632), Vector2(1692.27, 632), Vector2(1659.73, 632), Vector2(1627.2, 632), Vector2(1594.67, 632), Vector2(1562.13, 632), Vector2(1529.6, 632), Vector2(1497.07, 632), Vector2(1464.53, 632), Vector2(1432, 632), Vector2(1399.47, 632), Vector2(1366.93, 632), Vector2(1334.4, 632), Vector2(1301.87, 632), Vector2(1269.33, 632), Vector2(1236.8, 632), Vector2(1204.27, 632), Vector2(1171.73, 632), Vector2(1139.2, 632), Vector2(1106.67, 632), Vector2(1074.13, 632), Vector2(1041.6, 632), Vector2(1009.07, 632), Vector2(976.533, 632), Vector2(944, 632)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t0jcf"]
+_data = {
+&"RESET": SubResource("Animation_rvwh2"),
+&"SlideInLeft": SubResource("Animation_cpjl7")
+}
+
+[sub_resource type="Animation" id="Animation_cota5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(544, 768)]
+}
+
+[sub_resource type="Animation" id="Animation_jn7gk"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 768), Vector2(1874.13, 768), Vector2(1828.27, 768), Vector2(1782.4, 768), Vector2(1736.53, 768), Vector2(1690.67, 768), Vector2(1644.8, 768), Vector2(1598.93, 768), Vector2(1553.07, 768), Vector2(1507.2, 768), Vector2(1461.33, 768), Vector2(1415.47, 768), Vector2(1369.6, 768), Vector2(1323.73, 768), Vector2(1277.87, 768), Vector2(1232, 768), Vector2(1186.13, 768), Vector2(1140.27, 768), Vector2(1094.4, 768), Vector2(1048.53, 768), Vector2(1002.67, 768), Vector2(956.8, 768), Vector2(910.933, 768), Vector2(865.067, 768), Vector2(819.2, 768), Vector2(773.333, 768), Vector2(727.467, 768), Vector2(681.6, 768), Vector2(635.733, 768), Vector2(589.867, 768), Vector2(544, 768)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ksvej"]
+_data = {
+&"RESET": SubResource("Animation_cota5"),
+&"SlideInLeft": SubResource("Animation_jn7gk")
+}
+
+[sub_resource type="Animation" id="Animation_lmsbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(224, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_tqdxh"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 104), Vector2(1863.47, 104), Vector2(1806.93, 104), Vector2(1750.4, 104), Vector2(1693.87, 104), Vector2(1637.33, 104), Vector2(1580.8, 104), Vector2(1524.27, 104), Vector2(1467.73, 104), Vector2(1411.2, 104), Vector2(1354.67, 104), Vector2(1298.13, 104), Vector2(1241.6, 104), Vector2(1185.07, 104), Vector2(1128.53, 104), Vector2(1072, 104), Vector2(1015.47, 104), Vector2(958.933, 104), Vector2(902.4, 104), Vector2(845.867, 104), Vector2(789.333, 104), Vector2(732.8, 104), Vector2(676.267, 104), Vector2(619.733, 104), Vector2(563.2, 104), Vector2(506.667, 104), Vector2(450.133, 104), Vector2(393.6, 104), Vector2(337.067, 104), Vector2(280.533, 104), Vector2(224, 104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jph6s"]
+_data = {
+&"RESET": SubResource("Animation_lmsbk"),
+&"SlideInLeft": SubResource("Animation_tqdxh")
+}
+
+[sub_resource type="Animation" id="Animation_yjqog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_eec8d"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 224), Vector2(1858.67, 224), Vector2(1797.33, 224), Vector2(1736, 224), Vector2(1674.67, 224), Vector2(1613.33, 224), Vector2(1552, 224), Vector2(1490.67, 224), Vector2(1429.33, 224), Vector2(1368, 224), Vector2(1306.67, 224), Vector2(1245.33, 224), Vector2(1184, 224), Vector2(1122.67, 224), Vector2(1061.33, 224), Vector2(1000, 224), Vector2(938.667, 224), Vector2(877.333, 224), Vector2(816, 224), Vector2(754.667, 224), Vector2(693.333, 224), Vector2(632, 224), Vector2(570.667, 224), Vector2(509.333, 224), Vector2(448, 224), Vector2(386.667, 224), Vector2(325.333, 224), Vector2(264, 224), Vector2(202.667, 224), Vector2(141.333, 224), Vector2(80, 224)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqa5w"]
+_data = {
+&"RESET": SubResource("Animation_yjqog"),
+&"SlideInLeft": SubResource("Animation_eec8d")
+}
+
+[sub_resource type="Animation" id="Animation_brr32"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_78hov"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 400), Vector2(1877.33, 400), Vector2(1834.67, 400), Vector2(1792, 400), Vector2(1749.33, 400), Vector2(1706.67, 400), Vector2(1664, 400), Vector2(1621.33, 400), Vector2(1578.67, 400), Vector2(1536, 400), Vector2(1493.33, 400), Vector2(1450.67, 400), Vector2(1408, 400), Vector2(1365.33, 400), Vector2(1322.67, 400), Vector2(1280, 400), Vector2(1237.33, 400), Vector2(1194.67, 400), Vector2(1152, 400), Vector2(1109.33, 400), Vector2(1066.67, 400), Vector2(1024, 400), Vector2(981.333, 400), Vector2(938.667, 400), Vector2(896, 400), Vector2(853.333, 400), Vector2(810.667, 400), Vector2(768, 400), Vector2(725.333, 400), Vector2(682.667, 400), Vector2(640, 400)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4oifg"]
+_data = {
+&"RESET": SubResource("Animation_brr32"),
+&"SlideInLeft": SubResource("Animation_78hov")
+}
+
+[sub_resource type="Animation" id="Animation_155hm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(464, 520)]
+}
+
+[sub_resource type="Animation" id="Animation_vqbdd"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 520), Vector2(1871.47, 520), Vector2(1822.93, 520), Vector2(1774.4, 520), Vector2(1725.87, 520), Vector2(1677.33, 520), Vector2(1628.8, 520), Vector2(1580.27, 520), Vector2(1531.73, 520), Vector2(1483.2, 520), Vector2(1434.67, 520), Vector2(1386.13, 520), Vector2(1337.6, 520), Vector2(1289.07, 520), Vector2(1240.53, 520), Vector2(1192, 520), Vector2(1143.47, 520), Vector2(1094.93, 520), Vector2(1046.4, 520), Vector2(997.867, 520), Vector2(949.333, 520), Vector2(900.8, 520), Vector2(852.267, 520), Vector2(803.733, 520), Vector2(755.2, 520), Vector2(706.667, 520), Vector2(658.133, 520), Vector2(609.6, 520), Vector2(561.067, 520), Vector2(512.533, 520), Vector2(464, 520)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwgr4"]
+_data = {
+&"RESET": SubResource("Animation_155hm"),
+&"SlideInLeft": SubResource("Animation_vqbdd")
+}
+
+[sub_resource type="Animation" id="Animation_t4x2w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1064, 696)]
+}
+
+[sub_resource type="Animation" id="Animation_ti2lh"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 696), Vector2(1891.47, 696), Vector2(1862.93, 696), Vector2(1834.4, 696), Vector2(1805.87, 696), Vector2(1777.33, 696), Vector2(1748.8, 696), Vector2(1720.27, 696), Vector2(1691.73, 696), Vector2(1663.2, 696), Vector2(1634.67, 696), Vector2(1606.13, 696), Vector2(1577.6, 696), Vector2(1549.07, 696), Vector2(1520.53, 696), Vector2(1492, 696), Vector2(1463.47, 696), Vector2(1434.93, 696), Vector2(1406.4, 696), Vector2(1377.87, 696), Vector2(1349.33, 696), Vector2(1320.8, 696), Vector2(1292.27, 696), Vector2(1263.73, 696), Vector2(1235.2, 696), Vector2(1206.67, 696), Vector2(1178.13, 696), Vector2(1149.6, 696), Vector2(1121.07, 696), Vector2(1092.53, 696), Vector2(1064, 696)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nkas7"]
+_data = {
+&"RESET": SubResource("Animation_t4x2w"),
+&"SlideInLeft": SubResource("Animation_ti2lh")
+}
+
+[sub_resource type="Animation" id="Animation_bf24p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(904, 816)]
+}
+
+[sub_resource type="Animation" id="Animation_bddug"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 816), Vector2(1886.13, 816), Vector2(1852.27, 816), Vector2(1818.4, 816), Vector2(1784.53, 816), Vector2(1750.67, 816), Vector2(1716.8, 816), Vector2(1682.93, 816), Vector2(1649.07, 816), Vector2(1615.2, 816), Vector2(1581.33, 816), Vector2(1547.47, 816), Vector2(1513.6, 816), Vector2(1479.73, 816), Vector2(1445.87, 816), Vector2(1412, 816), Vector2(1378.13, 816), Vector2(1344.27, 816), Vector2(1310.4, 816), Vector2(1276.53, 816), Vector2(1242.67, 816), Vector2(1208.8, 816), Vector2(1174.93, 816), Vector2(1141.07, 816), Vector2(1107.2, 816), Vector2(1073.33, 816), Vector2(1039.47, 816), Vector2(1005.6, 816), Vector2(971.733, 816), Vector2(937.867, 816), Vector2(904, 816)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ejx3y"]
+_data = {
+&"RESET": SubResource("Animation_bf24p"),
+&"SlideInLeft": SubResource("Animation_bddug")
+}
+
+[sub_resource type="Animation" id="Animation_wc68e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 72)]
+}
+
+[sub_resource type="Animation" id="Animation_t3opd"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 72), Vector2(1858.13, 72), Vector2(1796.27, 72), Vector2(1734.4, 72), Vector2(1672.53, 72), Vector2(1610.67, 72), Vector2(1548.8, 72), Vector2(1486.93, 72), Vector2(1425.07, 72), Vector2(1363.2, 72), Vector2(1301.33, 72), Vector2(1239.47, 72), Vector2(1177.6, 72), Vector2(1115.73, 72), Vector2(1053.87, 72), Vector2(992, 72), Vector2(930.132, 72), Vector2(868.268, 72), Vector2(806.4, 72), Vector2(744.532, 72), Vector2(682.668, 72), Vector2(620.8, 72), Vector2(558.932, 72), Vector2(497.068, 72), Vector2(435.2, 72), Vector2(373.332, 72), Vector2(311.468, 72), Vector2(249.6, 72), Vector2(187.732, 72), Vector2(125.868, 72), Vector2(64, 72)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfi5l"]
+_data = {
+&"RESET": SubResource("Animation_wc68e"),
+&"SlideInLeft": SubResource("Animation_t3opd")
+}
+
+[sub_resource type="Animation" id="Animation_nj3k2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-144, 176)]
+}
+
+[sub_resource type="Animation" id="Animation_dqmje"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 176), Vector2(1851.2, 176), Vector2(1782.4, 176), Vector2(1713.6, 176), Vector2(1644.8, 176), Vector2(1576, 176), Vector2(1507.2, 176), Vector2(1438.4, 176), Vector2(1369.6, 176), Vector2(1300.8, 176), Vector2(1232, 176), Vector2(1163.2, 176), Vector2(1094.4, 176), Vector2(1025.6, 176), Vector2(956.801, 176), Vector2(888, 176), Vector2(819.199, 176), Vector2(750.401, 176), Vector2(681.6, 176), Vector2(612.799, 176), Vector2(544.001, 176), Vector2(475.2, 176), Vector2(406.399, 176), Vector2(337.601, 176), Vector2(268.8, 176), Vector2(199.999, 176), Vector2(131.201, 176), Vector2(62.4, 176), Vector2(-6.40075, 176), Vector2(-75.1993, 176), Vector2(-144, 176)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbf6v"]
+_data = {
+&"RESET": SubResource("Animation_nj3k2"),
+&"SlideInLeft": SubResource("Animation_dqmje")
+}
+
+[sub_resource type="Animation" id="Animation_ek86w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(408, 328)]
+}
+
+[sub_resource type="Animation" id="Animation_xa83j"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 328), Vector2(1869.6, 328), Vector2(1819.2, 328), Vector2(1768.8, 328), Vector2(1718.4, 328), Vector2(1668, 328), Vector2(1617.6, 328), Vector2(1567.2, 328), Vector2(1516.8, 328), Vector2(1466.4, 328), Vector2(1416, 328), Vector2(1365.6, 328), Vector2(1315.2, 328), Vector2(1264.8, 328), Vector2(1214.4, 328), Vector2(1164, 328), Vector2(1113.6, 328), Vector2(1063.2, 328), Vector2(1012.8, 328), Vector2(962.4, 328), Vector2(912, 328), Vector2(861.6, 328), Vector2(811.2, 328), Vector2(760.8, 328), Vector2(710.4, 328), Vector2(660, 328), Vector2(609.6, 328), Vector2(559.2, 328), Vector2(508.799, 328), Vector2(458.4, 328), Vector2(408, 328)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_npkhb"]
+_data = {
+&"RESET": SubResource("Animation_ek86w"),
+&"SlideInLeft": SubResource("Animation_xa83j")
+}
+
+[sub_resource type="Animation" id="Animation_em5ue"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(216, 440)]
+}
+
+[sub_resource type="Animation" id="Animation_2lc4d"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 440), Vector2(1863.2, 440), Vector2(1806.4, 440), Vector2(1749.6, 440), Vector2(1692.8, 440), Vector2(1636, 440), Vector2(1579.2, 440), Vector2(1522.4, 440), Vector2(1465.6, 440), Vector2(1408.8, 440), Vector2(1352, 440), Vector2(1295.2, 440), Vector2(1238.4, 440), Vector2(1181.6, 440), Vector2(1124.8, 440), Vector2(1068, 440), Vector2(1011.2, 440), Vector2(954.401, 440), Vector2(897.6, 440), Vector2(840.799, 440), Vector2(784.001, 440), Vector2(727.2, 440), Vector2(670.399, 440), Vector2(613.601, 440), Vector2(556.8, 440), Vector2(499.999, 440), Vector2(443.201, 440), Vector2(386.4, 440), Vector2(329.599, 440), Vector2(272.801, 440), Vector2(216, 440)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qrq3f"]
+_data = {
+&"RESET": SubResource("Animation_em5ue"),
+&"SlideInLeft": SubResource("Animation_2lc4d")
+}
+
+[sub_resource type="Animation" id="Animation_ou5cj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(856, 568)]
+}
+
+[sub_resource type="Animation" id="Animation_ivud3"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 568), Vector2(1884.53, 568), Vector2(1849.07, 568), Vector2(1813.6, 568), Vector2(1778.13, 568), Vector2(1742.67, 568), Vector2(1707.2, 568), Vector2(1671.73, 568), Vector2(1636.27, 568), Vector2(1600.8, 568), Vector2(1565.33, 568), Vector2(1529.87, 568), Vector2(1494.4, 568), Vector2(1458.93, 568), Vector2(1423.47, 568), Vector2(1388, 568), Vector2(1352.53, 568), Vector2(1317.07, 568), Vector2(1281.6, 568), Vector2(1246.13, 568), Vector2(1210.67, 568), Vector2(1175.2, 568), Vector2(1139.73, 568), Vector2(1104.27, 568), Vector2(1068.8, 568), Vector2(1033.33, 568), Vector2(997.867, 568), Vector2(962.4, 568), Vector2(926.933, 568), Vector2(891.467, 568), Vector2(856, 568)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_52abh"]
+_data = {
+&"RESET": SubResource("Animation_ou5cj"),
+&"SlideInLeft": SubResource("Animation_ivud3")
+}
+
+[sub_resource type="Animation" id="Animation_ucoqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(672, 680)]
+}
+
+[sub_resource type="Animation" id="Animation_wiu21"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 680), Vector2(1878.4, 680), Vector2(1836.8, 680), Vector2(1795.2, 680), Vector2(1753.6, 680), Vector2(1712, 680), Vector2(1670.4, 680), Vector2(1628.8, 680), Vector2(1587.2, 680), Vector2(1545.6, 680), Vector2(1504, 680), Vector2(1462.4, 680), Vector2(1420.8, 680), Vector2(1379.2, 680), Vector2(1337.6, 680), Vector2(1296, 680), Vector2(1254.4, 680), Vector2(1212.8, 680), Vector2(1171.2, 680), Vector2(1129.6, 680), Vector2(1088, 680), Vector2(1046.4, 680), Vector2(1004.8, 680), Vector2(963.2, 680), Vector2(921.6, 680), Vector2(880, 680), Vector2(838.4, 680), Vector2(796.8, 680), Vector2(755.2, 680), Vector2(713.6, 680), Vector2(672, 680)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbj0j"]
+_data = {
+&"RESET": SubResource("Animation_ucoqq"),
+&"SlideInLeft": SubResource("Animation_wiu21")
+}
+
+[sub_resource type="Animation" id="Animation_w7dfj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 803)]
+}
+
+[sub_resource type="Animation" id="Animation_gk8bt"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 803), Vector2(1894.4, 803), Vector2(1868.8, 803), Vector2(1843.2, 803), Vector2(1817.6, 803), Vector2(1792, 803), Vector2(1766.4, 803), Vector2(1740.8, 803), Vector2(1715.2, 803), Vector2(1689.6, 803), Vector2(1664, 803), Vector2(1638.4, 803), Vector2(1612.8, 803), Vector2(1587.2, 803), Vector2(1561.6, 803), Vector2(1536, 803), Vector2(1510.4, 803), Vector2(1484.8, 803), Vector2(1459.2, 803), Vector2(1433.6, 803), Vector2(1408, 803), Vector2(1382.4, 803), Vector2(1356.8, 803), Vector2(1331.2, 803), Vector2(1305.6, 803), Vector2(1280, 803), Vector2(1254.4, 803), Vector2(1228.8, 803), Vector2(1203.2, 803), Vector2(1177.6, 803), Vector2(1152, 803)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vxl8n"]
+_data = {
+&"RESET": SubResource("Animation_w7dfj"),
+&"SlideInLeft": SubResource("Animation_gk8bt")
+}
+
+[sub_resource type="Animation" id="Animation_tio85"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(944, 912)]
+}
+
+[sub_resource type="Animation" id="Animation_4bfbl"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 912), Vector2(1887.47, 912), Vector2(1854.93, 912), Vector2(1822.4, 912), Vector2(1789.87, 912), Vector2(1757.33, 912), Vector2(1724.8, 912), Vector2(1692.27, 912), Vector2(1659.73, 912), Vector2(1627.2, 912), Vector2(1594.67, 912), Vector2(1562.13, 912), Vector2(1529.6, 912), Vector2(1497.07, 912), Vector2(1464.53, 912), Vector2(1432, 912), Vector2(1399.47, 912), Vector2(1366.93, 912), Vector2(1334.4, 912), Vector2(1301.87, 912), Vector2(1269.33, 912), Vector2(1236.8, 912), Vector2(1204.27, 912), Vector2(1171.73, 912), Vector2(1139.2, 912), Vector2(1106.67, 912), Vector2(1074.13, 912), Vector2(1041.6, 912), Vector2(1009.07, 912), Vector2(976.533, 912), Vector2(944, 912)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_umjrm"]
+_data = {
+&"RESET": SubResource("Animation_tio85"),
+&"SlideInLeft": SubResource("Animation_4bfbl")
+}
+
+[sub_resource type="Animation" id="Animation_ihq3o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(976, 504)]
+}
+
+[sub_resource type="Animation" id="Animation_bf3lg"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2350, 504), Vector2(2304.2, 504), Vector2(2258.4, 504), Vector2(2212.6, 504), Vector2(2166.8, 504), Vector2(2121, 504), Vector2(2075.2, 504), Vector2(2029.4, 504), Vector2(1983.6, 504), Vector2(1937.8, 504), Vector2(1892, 504), Vector2(1846.2, 504), Vector2(1800.4, 504), Vector2(1754.6, 504), Vector2(1708.8, 504), Vector2(1663, 504), Vector2(1617.2, 504), Vector2(1571.4, 504), Vector2(1525.6, 504), Vector2(1479.8, 504), Vector2(1434, 504), Vector2(1388.2, 504), Vector2(1342.4, 504), Vector2(1296.6, 504), Vector2(1250.8, 504), Vector2(1205, 504), Vector2(1159.2, 504), Vector2(1113.4, 504), Vector2(1067.6, 504), Vector2(1021.8, 504), Vector2(976, 504)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dja3n"]
+_data = {
+&"RESET": SubResource("Animation_ihq3o"),
+&"SlideInLeft": SubResource("Animation_bf3lg")
+}
+
+[sub_resource type="Animation" id="Animation_hgdxl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(976, 504)]
+}
+
+[sub_resource type="Animation" id="Animation_b5edj"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2350, 504), Vector2(2304.2, 504), Vector2(2258.4, 504), Vector2(2212.6, 504), Vector2(2166.8, 504), Vector2(2121, 504), Vector2(2075.2, 504), Vector2(2029.4, 504), Vector2(1983.6, 504), Vector2(1937.8, 504), Vector2(1892, 504), Vector2(1846.2, 504), Vector2(1800.4, 504), Vector2(1754.6, 504), Vector2(1708.8, 504), Vector2(1663, 504), Vector2(1617.2, 504), Vector2(1571.4, 504), Vector2(1525.6, 504), Vector2(1479.8, 504), Vector2(1434, 504), Vector2(1388.2, 504), Vector2(1342.4, 504), Vector2(1296.6, 504), Vector2(1250.8, 504), Vector2(1205, 504), Vector2(1159.2, 504), Vector2(1113.4, 504), Vector2(1067.6, 504), Vector2(1021.8, 504), Vector2(976, 504)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hy23r"]
+_data = {
+&"RESET": SubResource("Animation_hgdxl"),
+&"SlideInLeft": SubResource("Animation_b5edj")
+}
+
+[sub_resource type="Animation" id="Animation_df38b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 448)]
+}
+
+[sub_resource type="Animation" id="Animation_s6eao"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 448), Vector2(1872, 448), Vector2(1824, 448), Vector2(1776, 448), Vector2(1728, 448), Vector2(1680, 448), Vector2(1632, 448), Vector2(1584, 448), Vector2(1536, 448), Vector2(1488, 448), Vector2(1440, 448), Vector2(1392, 448), Vector2(1344, 448), Vector2(1296, 448), Vector2(1248, 448), Vector2(1200, 448), Vector2(1152, 448), Vector2(1104, 448), Vector2(1056, 448), Vector2(1008, 448), Vector2(960, 448), Vector2(912, 448), Vector2(864, 448), Vector2(816, 448), Vector2(768, 448), Vector2(720, 448), Vector2(672, 448), Vector2(624, 448), Vector2(576, 448), Vector2(528, 448), Vector2(480, 448)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_abcbf"]
+_data = {
+&"RESET": SubResource("Animation_df38b"),
+&"SlideInLeft": SubResource("Animation_s6eao")
+}
+
+[sub_resource type="Animation" id="Animation_hkesl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(976, 504)]
+}
+
+[sub_resource type="Animation" id="Animation_p6fda"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2350, 504), Vector2(2304.2, 504), Vector2(2258.4, 504), Vector2(2212.6, 504), Vector2(2166.8, 504), Vector2(2121, 504), Vector2(2075.2, 504), Vector2(2029.4, 504), Vector2(1983.6, 504), Vector2(1937.8, 504), Vector2(1892, 504), Vector2(1846.2, 504), Vector2(1800.4, 504), Vector2(1754.6, 504), Vector2(1708.8, 504), Vector2(1663, 504), Vector2(1617.2, 504), Vector2(1571.4, 504), Vector2(1525.6, 504), Vector2(1479.8, 504), Vector2(1434, 504), Vector2(1388.2, 504), Vector2(1342.4, 504), Vector2(1296.6, 504), Vector2(1250.8, 504), Vector2(1205, 504), Vector2(1159.2, 504), Vector2(1113.4, 504), Vector2(1067.6, 504), Vector2(1021.8, 504), Vector2(976, 504)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ovmjf"]
+_data = {
+&"RESET": SubResource("Animation_hkesl"),
+&"SlideInLeft": SubResource("Animation_p6fda")
+}
+
+[sub_resource type="Animation" id="Animation_nlrlk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 224)]
+}
+
+[sub_resource type="Animation" id="Animation_pw77f"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 224), Vector2(1866.67, 224), Vector2(1813.33, 224), Vector2(1760, 224), Vector2(1706.67, 224), Vector2(1653.33, 224), Vector2(1600, 224), Vector2(1546.67, 224), Vector2(1493.33, 224), Vector2(1440, 224), Vector2(1386.67, 224), Vector2(1333.33, 224), Vector2(1280, 224), Vector2(1226.67, 224), Vector2(1173.33, 224), Vector2(1120, 224), Vector2(1066.67, 224), Vector2(1013.33, 224), Vector2(960, 224), Vector2(906.667, 224), Vector2(853.333, 224), Vector2(800, 224), Vector2(746.665, 224), Vector2(693.335, 224), Vector2(640, 224), Vector2(586.667, 224), Vector2(533.333, 224), Vector2(480, 224), Vector2(426.665, 224), Vector2(373.335, 224), Vector2(320, 224)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3esil"]
+_data = {
+&"RESET": SubResource("Animation_nlrlk"),
+&"SlideInLeft": SubResource("Animation_pw77f")
+}
+
+[sub_resource type="Animation" id="Animation_h0l1h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 448)]
+}
+
+[sub_resource type="Animation" id="Animation_pdqdc"]
+resource_name = "SlideInLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1920, 448), Vector2(1872, 448), Vector2(1824, 448), Vector2(1776, 448), Vector2(1728, 448), Vector2(1680, 448), Vector2(1632, 448), Vector2(1584, 448), Vector2(1536, 448), Vector2(1488, 448), Vector2(1440, 448), Vector2(1392, 448), Vector2(1344, 448), Vector2(1296, 448), Vector2(1248, 448), Vector2(1200, 448), Vector2(1152, 448), Vector2(1104, 448), Vector2(1056, 448), Vector2(1008, 448), Vector2(960, 448), Vector2(912, 448), Vector2(864, 448), Vector2(816, 448), Vector2(768, 448), Vector2(720, 448), Vector2(672, 448), Vector2(624, 448), Vector2(576, 448), Vector2(528, 448), Vector2(480, 448)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_agbc3"]
+_data = {
+&"RESET": SubResource("Animation_h0l1h"),
+&"SlideInLeft": SubResource("Animation_pdqdc")
+}
+
+[node name="Attract" type="Control" unique_id=1899166378]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_o4v0r")
+metadata/_custom_type_script = "uid://dru3usokwlhd3"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2030358424]
 position = Vector2(959, 541)
 scale = Vector2(1.47846, 1.47268)
-texture = ExtResource("2_1f1fh")
+texture = ExtResource("2_vj3w2")
 
-[node name="StartupVideo" type="VideoStreamPlayer" parent="."]
+[node name="StartupVideo" type="VideoStreamPlayer" parent="." unique_id=1011694425]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-stream = ExtResource("3_tj1lo")
+stream = ExtResource("3_1f1fh")
 autoplay = true
 expand = true
 loop = true
 bus = &"music"
-script = ExtResource("3_1f1fh")
+script = ExtResource("4_tj1lo")
 hide_behavior = 1
 events_when_stopped = "remove"
 preview_in_editor = true
+
+[node name="MPFCarousel" type="Control" parent="." unique_id=1222800551]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_tj1lo")
+carousel_name = "attract"
+metadata/_custom_type_script = "uid://dpe3dq8axt3g7"
+
+[node name="beastie_pinball_logo" type="Sprite2D" parent="MPFCarousel" unique_id=838741254]
+visible = false
+top_level = true
+position = Vector2(976, 504)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_4o4im")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/beastie_pinball_logo" unique_id=1375400636]
+libraries/ = SubResource("AnimationLibrary_s6eao")
+autoplay = &"SlideInLeft"
+
+[node name="gameover" type="Label" parent="MPFCarousel" unique_id=1201074157]
+visible = false
+layout_mode = 0
+offset_left = 608.0
+offset_top = 440.0
+offset_right = 1387.0
+offset_bottom = 559.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "Game Over"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/gameover" unique_id=1411074398]
+libraries/ = SubResource("AnimationLibrary_db5fx")
+
+[node name="credits" type="Label" parent="MPFCarousel" unique_id=1438684539]
+visible = false
+top_level = true
+layout_mode = 0
+offset_left = 408.0
+offset_top = 456.0
+offset_right = 1456.0
+offset_bottom = 565.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 106
+text = " SAMPLE TEXT"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "credits_string"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/credits" unique_id=1462097144]
+libraries/ = SubResource("AnimationLibrary_df38b")
+autoplay = &"SlideInLeft"
+
+[node name="dedicated" type="Node2D" parent="MPFCarousel" unique_id=922459786]
+visible = false
+
+[node name="ColorRect_blackbg" type="ColorRect" parent="MPFCarousel/dedicated" unique_id=815737372]
+offset_right = 1920.0
+offset_bottom = 1088.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect_whiteborder" type="ColorRect" parent="MPFCarousel/dedicated" unique_id=1748156628]
+offset_left = 16.0
+offset_top = 104.0
+offset_right = 992.0
+offset_bottom = 1000.0
+
+[node name="rip" type="Label" parent="MPFCarousel/dedicated" unique_id=1234088121]
+top_level = true
+offset_left = 1008.0
+offset_top = 424.0
+offset_right = 1866.0
+offset_bottom = 656.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "in memory of
+adam \"MCA\" Yauch
+1964-2012"
+horizontal_alignment = 1
+
+[node name="mca_pic" type="Sprite2D" parent="MPFCarousel/dedicated" unique_id=2125338481]
+position = Vector2(504, 552.00006)
+scale = Vector2(1, 0.961)
+texture = ExtResource("9_rqkls")
+
+[node name="ColorRect" type="ColorRect" parent="MPFCarousel/dedicated" unique_id=206842990]
+visible = false
+top_level = true
+offset_right = 1936.0
+offset_bottom = 1165.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/dedicated/ColorRect" unique_id=1120276395]
+libraries/ = SubResource("AnimationLibrary_pw77f")
+autoplay = &"FadeIn"
+
+[node name="fast_logo" type="Sprite2D" parent="MPFCarousel" unique_id=710412551]
+visible = false
+top_level = true
+position = Vector2(968, 504)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("10_8pccq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/fast_logo" unique_id=600295409]
+libraries/ = SubResource("AnimationLibrary_rqkls")
+autoplay = &"SlideInLeft"
+
+[node name="highscore1" type="Node2D" parent="MPFCarousel" unique_id=395598552]
+visible = false
+
+[node name="score2_label" type="Label" parent="MPFCarousel/highscore1" unique_id=1201084754]
+offset_left = 1.0
+offset_top = 526.0
+offset_right = 1915.0
+offset_bottom = 649.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "grand champion"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score2_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore1/score2_label" unique_id=266075354]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_nlrlk")
+autoplay = &"SlideInLeft"
+
+[node name="score2_name" type="Label" parent="MPFCarousel/highscore1" unique_id=405669088]
+offset_left = 4.0
+offset_top = 684.0
+offset_right = 1918.0
+offset_bottom = 807.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score2_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore1/score2_name" unique_id=931466809]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_nlrlk")
+autoplay = &"SlideInLeft"
+
+[node name="score2_value" type="Label" parent="MPFCarousel/highscore1" unique_id=1400722179]
+offset_left = 3.0
+offset_top = 824.0
+offset_right = 1922.0
+offset_bottom = 947.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score2_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore1/score2_value" unique_id=1175006872]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_nlrlk")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscore1" unique_id=1845471250]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="highscore2" type="Node2D" parent="MPFCarousel" unique_id=92891186]
+visible = false
+
+[node name="score3_label" type="Label" parent="MPFCarousel/highscore2" unique_id=766210547]
+offset_left = 1.0
+offset_top = 526.0
+offset_right = 1915.0
+offset_bottom = 649.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "grand champion"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score3_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore2/score3_label" unique_id=1961183054]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_2soeo")
+autoplay = &"SlideInLeft"
+
+[node name="score3_name" type="Label" parent="MPFCarousel/highscore2" unique_id=1285641091]
+offset_left = 4.0
+offset_top = 684.0
+offset_right = 1918.0
+offset_bottom = 807.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score3_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore2/score3_name" unique_id=1778547954]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_2soeo")
+autoplay = &"SlideInLeft"
+
+[node name="score3_value" type="Label" parent="MPFCarousel/highscore2" unique_id=1496319197]
+offset_left = 3.0
+offset_top = 824.0
+offset_right = 1922.0
+offset_bottom = 947.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score3_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore2/score3_value" unique_id=1887450175]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_2soeo")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscore2" unique_id=2079369636]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="highscore3" type="Node2D" parent="MPFCarousel" unique_id=351740769]
+visible = false
+
+[node name="score4_label" type="Label" parent="MPFCarousel/highscore3" unique_id=1547146212]
+offset_left = 1.0
+offset_top = 526.0
+offset_right = 1915.0
+offset_bottom = 649.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "grand champion"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score4_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore3/score4_label" unique_id=325195623]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_p77hr")
+autoplay = &"SlideInLeft"
+
+[node name="score4_name" type="Label" parent="MPFCarousel/highscore3" unique_id=1109565835]
+offset_left = 4.0
+offset_top = 684.0
+offset_right = 1918.0
+offset_bottom = 807.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score4_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore3/score4_name" unique_id=1685282701]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_p77hr")
+autoplay = &"SlideInLeft"
+
+[node name="score4_value" type="Label" parent="MPFCarousel/highscore3" unique_id=189553276]
+offset_left = 3.0
+offset_top = 824.0
+offset_right = 1922.0
+offset_bottom = 947.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score4_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore3/score4_value" unique_id=246189600]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_p77hr")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscore3" unique_id=936298340]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="highscore4" type="Node2D" parent="MPFCarousel" unique_id=98725471]
+visible = false
+
+[node name="score5_label" type="Label" parent="MPFCarousel/highscore4" unique_id=1109649937]
+offset_left = 1.0
+offset_top = 526.0
+offset_right = 1915.0
+offset_bottom = 649.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "grand champion"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score5_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore4/score5_label" unique_id=988959484]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0rcuk")
+autoplay = &"RESET"
+
+[node name="score5_name" type="Label" parent="MPFCarousel/highscore4" unique_id=96165494]
+offset_left = 4.0
+offset_top = 684.0
+offset_right = 1918.0
+offset_bottom = 807.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score5_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore4/score5_name" unique_id=1616941011]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0rcuk")
+autoplay = &"RESET"
+
+[node name="score5_value" type="Label" parent="MPFCarousel/highscore4" unique_id=1992357132]
+offset_left = 3.0
+offset_top = 824.0
+offset_right = 1922.0
+offset_bottom = 947.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score5_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscore4/score5_value" unique_id=1904125184]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0rcuk")
+autoplay = &"RESET"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscore4" unique_id=1345892084]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="highscoregrandchampion" type="Node2D" parent="MPFCarousel" unique_id=784069409]
+visible = false
+
+[node name="score1_label" type="Label" parent="MPFCarousel/highscoregrandchampion" unique_id=2053571514]
+offset_left = 1.0
+offset_top = 526.0
+offset_right = 1915.0
+offset_bottom = 649.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "grand champion"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoregrandchampion/score1_label" unique_id=583252358]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7lbv0")
+autoplay = &"SlideInLeft"
+
+[node name="score1_name" type="Label" parent="MPFCarousel/highscoregrandchampion" unique_id=583628671]
+offset_left = 4.0
+offset_top = 684.0
+offset_right = 1918.0
+offset_bottom = 807.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoregrandchampion/score1_name" unique_id=1863000826]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7lbv0")
+autoplay = &"SlideInLeft"
+
+[node name="score1_value" type="Label" parent="MPFCarousel/highscoregrandchampion" unique_id=670458260]
+offset_left = 3.0
+offset_top = 824.0
+offset_right = 1922.0
+offset_bottom = 947.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoregrandchampion/score1_value" unique_id=1261369129]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7lbv0")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscoregrandchampion" unique_id=1412192462]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="highscoremodes1" type="Node2D" parent="MPFCarousel" unique_id=787072780]
+visible = false
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscoremodes1" unique_id=317639018]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="mode_fingerlickingood_score1_label" type="Label" parent="MPFCarousel/highscoremodes1" unique_id=1976078251]
+offset_left = 6.0
+offset_top = 397.0
+offset_right = 1920.0
+offset_bottom = 482.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "finger lickin good"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_fingerlickingood_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes1/mode_fingerlickingood_score1_label" unique_id=1850296646]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_cbrrs")
+autoplay = &"SlideInLeft"
+
+[node name="mode_fingerlickingood_score1_name" type="Label" parent="MPFCarousel/highscoremodes1" unique_id=1065216712]
+offset_left = 2.0
+offset_top = 491.0
+offset_right = 1916.0
+offset_bottom = 574.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_fingerlickingood_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes1/mode_fingerlickingood_score1_name" unique_id=730568980]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_cbrrs")
+autoplay = &"SlideInLeft"
+
+[node name="mode_fingerlickingood_score1_value" type="Label" parent="MPFCarousel/highscoremodes1" unique_id=251882351]
+offset_left = 6.0
+offset_top = 575.0
+offset_right = 1925.0
+offset_bottom = 653.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_fingerlickingood_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes1/mode_fingerlickingood_score1_value" unique_id=735343688]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_cbrrs")
+autoplay = &"SlideInLeft"
+
+[node name="mode_highplainsdrifter_score1_label" type="Label" parent="MPFCarousel/highscoremodes1" unique_id=1923399049]
+offset_left = 2.0
+offset_top = 765.0
+offset_right = 1916.0
+offset_bottom = 850.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "high plains drifter"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_highplainsdrifter_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes1/mode_highplainsdrifter_score1_label" unique_id=2098772399]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_cbrrs")
+autoplay = &"SlideInLeft"
+
+[node name="mode_highplainsdrifter_score1_name" type="Label" parent="MPFCarousel/highscoremodes1" unique_id=1468848863]
+offset_left = 2.0
+offset_top = 848.0
+offset_right = 1916.0
+offset_bottom = 920.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_highplainsdrifter_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes1/mode_highplainsdrifter_score1_name" unique_id=600702099]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_cbrrs")
+autoplay = &"SlideInLeft"
+
+[node name="mode_highplainsdrifter_score1_value" type="Label" parent="MPFCarousel/highscoremodes1" unique_id=1597943603]
+offset_left = 2.0
+offset_top = 927.0
+offset_right = 1921.0
+offset_bottom = 1005.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_highplainsdrifter_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes1/mode_highplainsdrifter_score1_value" unique_id=1058626769]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_cbrrs")
+autoplay = &"SlideInLeft"
+
+[node name="highscoremodes2" type="Node2D" parent="MPFCarousel" unique_id=812668724]
+visible = false
+
+[node name="mode_intergalactic_score1_label" type="Label" parent="MPFCarousel/highscoremodes2" unique_id=2078092697]
+offset_left = 6.0
+offset_top = 397.0
+offset_right = 1920.0
+offset_bottom = 482.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "intergalactic"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_intergalactic_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes2/mode_intergalactic_score1_label" unique_id=921822708]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_q6qni")
+autoplay = &"SlideInLeft"
+
+[node name="mode_intergalactic_score1_name" type="Label" parent="MPFCarousel/highscoremodes2" unique_id=369825725]
+offset_left = 2.0
+offset_top = 491.0
+offset_right = 1916.0
+offset_bottom = 574.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_intergalactic_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes2/mode_intergalactic_score1_name" unique_id=1850224173]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_q6qni")
+autoplay = &"SlideInLeft"
+
+[node name="mode_intergalactic_score1_value" type="Label" parent="MPFCarousel/highscoremodes2" unique_id=430447468]
+offset_left = 6.0
+offset_top = 575.0
+offset_right = 1925.0
+offset_bottom = 653.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_intergalactic_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes2/mode_intergalactic_score1_value" unique_id=1301511680]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_q6qni")
+autoplay = &"SlideInLeft"
+
+[node name="mode_paulrevere_score1_label" type="Label" parent="MPFCarousel/highscoremodes2" unique_id=1918572753]
+offset_left = 2.0
+offset_top = 765.0
+offset_right = 1916.0
+offset_bottom = 850.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "paul revere"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_paulrevere_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes2/mode_paulrevere_score1_label" unique_id=552124766]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_q6qni")
+autoplay = &"SlideInLeft"
+
+[node name="mode_paulrevere_score1_name" type="Label" parent="MPFCarousel/highscoremodes2" unique_id=67866857]
+offset_left = 2.0
+offset_top = 848.0
+offset_right = 1916.0
+offset_bottom = 920.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_paulrevere_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes2/mode_paulrevere_score1_name" unique_id=1062902495]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_q6qni")
+autoplay = &"SlideInLeft"
+
+[node name="mode_paulrevere_score1_value" type="Label" parent="MPFCarousel/highscoremodes2" unique_id=1151818403]
+offset_left = 2.0
+offset_top = 927.0
+offset_right = 1921.0
+offset_bottom = 1005.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_paulrevere_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes2/mode_paulrevere_score1_value" unique_id=578351200]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_q6qni")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscoremodes2" unique_id=1598659481]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="highscoremodes4" type="Node2D" parent="MPFCarousel" unique_id=1888677377]
+
+[node name="mode_toomanyrappers_score1_label" type="Label" parent="MPFCarousel/highscoremodes4" unique_id=2027020347]
+offset_left = 6.0
+offset_top = 397.0
+offset_right = 1920.0
+offset_bottom = 482.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "too many rappers
+"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_toomanyrappers_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes4/mode_toomanyrappers_score1_label" unique_id=1132634843]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_w5fd8")
+autoplay = &"SlideInLeft"
+
+[node name="mode_toomanyrappers_score1_name" type="Label" parent="MPFCarousel/highscoremodes4" unique_id=55484317]
+offset_left = 2.0
+offset_top = 491.0
+offset_right = 1916.0
+offset_bottom = 574.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_toomanyrappers_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes4/mode_toomanyrappers_score1_name" unique_id=1389440593]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_w5fd8")
+autoplay = &"SlideInLeft"
+
+[node name="mode_toomanyrappers_score1_value" type="Label" parent="MPFCarousel/highscoremodes4" unique_id=2061030892]
+offset_left = 6.0
+offset_top = 575.0
+offset_right = 1925.0
+offset_bottom = 653.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_toomanyrappers_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes4/mode_toomanyrappers_score1_value" unique_id=69133514]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_w5fd8")
+autoplay = &"SlideInLeft"
+
+[node name="mode_tripletrouble_score1_label" type="Label" parent="MPFCarousel/highscoremodes4" unique_id=1113801816]
+offset_left = 2.0
+offset_top = 765.0
+offset_right = 1916.0
+offset_bottom = 850.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "triple trouble"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_tripletrouble_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes4/mode_tripletrouble_score1_label" unique_id=125306189]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_w5fd8")
+autoplay = &"SlideInLeft"
+
+[node name="mode_tripletrouble_score1_name" type="Label" parent="MPFCarousel/highscoremodes4" unique_id=614699975]
+offset_left = 2.0
+offset_top = 848.0
+offset_right = 1916.0
+offset_bottom = 920.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_tripletrouble_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes4/mode_tripletrouble_score1_name" unique_id=1685250003]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_w5fd8")
+autoplay = &"SlideInLeft"
+
+[node name="mode_tripletrouble_score1_value" type="Label" parent="MPFCarousel/highscoremodes4" unique_id=625835240]
+offset_left = 2.0
+offset_top = 927.0
+offset_right = 1921.0
+offset_bottom = 1005.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_tripletrouble_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes4/mode_tripletrouble_score1_value" unique_id=707818293]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_w5fd8")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscoremodes4" unique_id=449757955]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="highscoremodes5" type="Node2D" parent="MPFCarousel" unique_id=1646271111]
+
+[node name="mode_makesomenoise_score1_label" type="Label" parent="MPFCarousel/highscoremodes5" unique_id=21254697]
+offset_left = 6.0
+offset_top = 397.0
+offset_right = 1920.0
+offset_bottom = 482.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "make some noise"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_makesomenoise_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes5/mode_makesomenoise_score1_label" unique_id=162317009]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_xqy3n")
+autoplay = &"SlideInLeft"
+
+[node name="mode_makesomenoise_score1_name" type="Label" parent="MPFCarousel/highscoremodes5" unique_id=1086929074]
+offset_left = 2.0
+offset_top = 491.0
+offset_right = 1916.0
+offset_bottom = 574.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_makesomenoise_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes5/mode_makesomenoise_score1_name" unique_id=641161777]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_xqy3n")
+autoplay = &"SlideInLeft"
+
+[node name="mode_makesomenoise_score1_value" type="Label" parent="MPFCarousel/highscoremodes5" unique_id=864138088]
+offset_left = 6.0
+offset_top = 575.0
+offset_right = 1925.0
+offset_bottom = 653.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_makesomenoise_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes5/mode_makesomenoise_score1_value" unique_id=1917703428]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_xqy3n")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscoremodes5" unique_id=2014109341]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="girls_bonus_score1_label" type="Label" parent="MPFCarousel/highscoremodes5" unique_id=446119881]
+offset_left = 2.0
+offset_top = 765.0
+offset_right = 1916.0
+offset_bottom = 850.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "Girls Frenzy"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "girls_bonus_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes5/girls_bonus_score1_label" unique_id=2118569781]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_f2lor")
+autoplay = &"SlideInLeft"
+
+[node name="girls_bonus_score1_name" type="Label" parent="MPFCarousel/highscoremodes5" unique_id=995527201]
+offset_left = 2.0
+offset_top = 848.0
+offset_right = 1916.0
+offset_bottom = 920.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "grl"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "girls_bonus_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes5/girls_bonus_score1_name" unique_id=1230768440]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_f2lor")
+autoplay = &"SlideInLeft"
+
+[node name="girls_bonus_score1_value" type="Label" parent="MPFCarousel/highscoremodes5" unique_id=1475770311]
+offset_left = 2.0
+offset_top = 927.0
+offset_right = 1921.0
+offset_bottom = 1005.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "50000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "girls_bonus_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes5/girls_bonus_score1_value" unique_id=580218498]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_f2lor")
+autoplay = &"SlideInLeft"
+
+[node name="highscoremodes6" type="Node2D" parent="MPFCarousel" unique_id=518365423]
+
+[node name="mode_bodhisattvavow_score1_label" type="Label" parent="MPFCarousel/highscoremodes6" unique_id=1062973546]
+offset_left = 6.0
+offset_top = 397.0
+offset_right = 1920.0
+offset_bottom = 482.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "bodhisattva vow"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_bodhisattvavow_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes6/mode_bodhisattvavow_score1_label" unique_id=2033180028]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_yjqog")
+autoplay = &"SlideInLeft"
+
+[node name="mode_bodhisattvavow_score1_name" type="Label" parent="MPFCarousel/highscoremodes6" unique_id=1172822073]
+offset_left = 2.0
+offset_top = 491.0
+offset_right = 1916.0
+offset_bottom = 574.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "MCA"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_bodhisattvavow_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes6/mode_bodhisattvavow_score1_name" unique_id=1197439497]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_yjqog")
+autoplay = &"SlideInLeft"
+
+[node name="mode_bodhisattvavow_score1_value" type="Label" parent="MPFCarousel/highscoremodes6" unique_id=1446107158]
+offset_left = 6.0
+offset_top = 575.0
+offset_right = 1925.0
+offset_bottom = 653.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_bodhisattvavow_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes6/mode_bodhisattvavow_score1_value" unique_id=1357516654]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_yjqog")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscoremodes6" unique_id=1941796738]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="mode_sureshot_score1_label" type="Label" parent="MPFCarousel/highscoremodes6" unique_id=1287866663]
+offset_left = 2.0
+offset_top = 765.0
+offset_right = 1916.0
+offset_bottom = 850.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "sure shot"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_sureshot_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes6/mode_sureshot_score1_label" unique_id=837834034]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_brr32")
+autoplay = &"SlideInLeft"
+
+[node name="mode_sureshot_score1_name" type="Label" parent="MPFCarousel/highscoremodes6" unique_id=1659826629]
+offset_left = 2.0
+offset_top = 848.0
+offset_right = 1916.0
+offset_bottom = 920.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "sld"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_sureshot_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes6/mode_sureshot_score1_name" unique_id=1256859594]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_brr32")
+autoplay = &"SlideInLeft"
+
+[node name="mode_sureshot_score1_value" type="Label" parent="MPFCarousel/highscoremodes6" unique_id=1195097105]
+offset_left = 2.0
+offset_top = 927.0
+offset_right = 1921.0
+offset_bottom = 1005.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "50000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "mode_sureshot_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes6/mode_sureshot_score1_value" unique_id=1471915321]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_brr32")
+autoplay = &"SlideInLeft"
+
+[node name="highscoremodes7" type="Node2D" parent="MPFCarousel" unique_id=1940262193]
+
+[node name="highest_bonus1_label" type="Label" parent="MPFCarousel/highscoremodes7" unique_id=1125417296]
+offset_left = 6.0
+offset_top = 397.0
+offset_right = 1920.0
+offset_bottom = 482.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "bodhisattva vow"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "highest_bonus1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes7/highest_bonus1_label" unique_id=206613313]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_155hm")
+autoplay = &"SlideInLeft"
+
+[node name="highest_bonus1_name" type="Label" parent="MPFCarousel/highscoremodes7" unique_id=515404544]
+offset_left = 2.0
+offset_top = 491.0
+offset_right = 1916.0
+offset_bottom = 574.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "MCA"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "highest_bonus1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes7/highest_bonus1_name" unique_id=1726459963]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_155hm")
+autoplay = &"SlideInLeft"
+
+[node name="highest_bonus1_value" type="Label" parent="MPFCarousel/highscoremodes7" unique_id=2011937879]
+offset_left = 6.0
+offset_top = 575.0
+offset_right = 1925.0
+offset_bottom = 653.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "highest_bonus1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremodes7/highest_bonus1_value" unique_id=120354381]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_155hm")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscoremodes7" unique_id=322264480]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="highscoremultiballs" type="Node2D" parent="MPFCarousel" unique_id=414030867]
+
+[node name="multiball_chcheckitout_score1_label" type="Label" parent="MPFCarousel/highscoremultiballs" unique_id=255391044]
+offset_left = 6.0
+offset_top = 397.0
+offset_right = 1920.0
+offset_bottom = 482.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "chcheckitout"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "multiball_chcheckitout_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremultiballs/multiball_chcheckitout_score1_label" unique_id=1365670938]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_t4x2w")
+autoplay = &"SlideInLeft"
+
+[node name="multiball_chcheckitout_score1_name" type="Label" parent="MPFCarousel/highscoremultiballs" unique_id=191855991]
+offset_left = 2.0
+offset_top = 491.0
+offset_right = 1916.0
+offset_bottom = 574.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "multiball_chcheckitout_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremultiballs/multiball_chcheckitout_score1_name" unique_id=1290924955]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_t4x2w")
+autoplay = &"SlideInLeft"
+
+[node name="multiball_chcheckitout_score1_value" type="Label" parent="MPFCarousel/highscoremultiballs" unique_id=38459229]
+offset_left = 6.0
+offset_top = 575.0
+offset_right = 1925.0
+offset_bottom = 653.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "multiball_chcheckitout_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremultiballs/multiball_chcheckitout_score1_value" unique_id=1751456962]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_t4x2w")
+autoplay = &"SlideInLeft"
+
+[node name="multiball_bodymovin_score1_label" type="Label" parent="MPFCarousel/highscoremultiballs" unique_id=1939569513]
+offset_left = 2.0
+offset_top = 765.0
+offset_right = 1916.0
+offset_bottom = 850.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "body movin'"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "multiball_bodymovin_score1_label"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremultiballs/multiball_bodymovin_score1_label" unique_id=1036722508]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_t4x2w")
+autoplay = &"SlideInLeft"
+
+[node name="multiball_bodymovin_score1_name" type="Label" parent="MPFCarousel/highscoremultiballs" unique_id=970703407]
+offset_left = 2.0
+offset_top = 848.0
+offset_right = 1916.0
+offset_bottom = 920.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "mca"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "multiball_bodymovin_score1_name"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremultiballs/multiball_bodymovin_score1_name" unique_id=952572900]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_t4x2w")
+autoplay = &"SlideInLeft"
+
+[node name="multiball_bodymovin_score1_value" type="Label" parent="MPFCarousel/highscoremultiballs" unique_id=679784054]
+offset_left = 2.0
+offset_top = 927.0
+offset_right = 1921.0
+offset_bottom = 1005.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 70
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "multiball_bodymovin_score1_value"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/highscoremultiballs/multiball_bodymovin_score1_value" unique_id=545538410]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_t4x2w")
+autoplay = &"SlideInLeft"
+
+[node name="highscores" type="Label" parent="MPFCarousel/highscoremultiballs" unique_id=1066440396]
+offset_left = 5.0
+offset_top = 138.0
+offset_right = 1908.0
+offset_bottom = 257.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 116
+text = "High scores"
+horizontal_alignment = 1
+
+[node name="last_scores_1p" type="Node2D" parent="MPFCarousel" unique_id=2066323447]
+
+[node name="player1" type="Label" parent="MPFCarousel/last_scores_1p" unique_id=1012626356]
+top_level = true
+offset_left = 664.0
+offset_top = 400.0
+offset_right = 1288.0
+offset_bottom = 498.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_1p/player1" unique_id=1818579235]
+libraries/ = SubResource("AnimationLibrary_wiu21")
+autoplay = &"SlideInLeft"
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_1p" unique_id=1647550186]
+offset_left = 264.0
+offset_top = 568.0
+offset_right = 1648.0
+offset_bottom = 691.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_1p/player1_score" unique_id=2008378604]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_4bfbl")
+autoplay = &"SlideInLeft"
+
+[node name="last_scores_2p" type="Node2D" parent="MPFCarousel" unique_id=450222772]
+
+[node name="player1" type="Label" parent="MPFCarousel/last_scores_2p" unique_id=641003997]
+top_level = true
+offset_left = 408.0
+offset_top = 160.0
+offset_right = 1032.0
+offset_bottom = 258.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_2p/player1" unique_id=974318489]
+libraries/ = SubResource("AnimationLibrary_1k0dd")
+autoplay = &"SlideInLeft"
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_2p" unique_id=219780702]
+offset_left = -8.0
+offset_top = 272.0
+offset_right = 1376.0
+offset_bottom = 395.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_2p/player1_score" unique_id=1516417761]
+libraries/ = SubResource("AnimationLibrary_kpt00")
+autoplay = &"SlideInLeft"
+
+[node name="player2" type="Label" parent="MPFCarousel/last_scores_2p" unique_id=1292760265]
+top_level = true
+offset_left = 944.0
+offset_top = 632.0
+offset_right = 1568.0
+offset_bottom = 730.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_2p/player2" unique_id=1464968847]
+libraries/ = SubResource("AnimationLibrary_t0jcf")
+autoplay = &"SlideInLeft"
+
+[node name="player2_score" type="Label" parent="MPFCarousel/last_scores_2p" unique_id=1740031075]
+offset_left = 544.0
+offset_top = 768.0
+offset_right = 1928.0
+offset_bottom = 891.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_2p/player2_score" unique_id=1865403329]
+libraries/ = SubResource("AnimationLibrary_ksvej")
+autoplay = &"SlideInLeft"
+
+[node name="last_scores_3p" type="Node2D" parent="MPFCarousel" unique_id=850913794]
+
+[node name="player1" type="Label" parent="MPFCarousel/last_scores_3p" unique_id=1284248645]
+top_level = true
+offset_left = 224.0
+offset_top = 104.0
+offset_right = 848.0
+offset_bottom = 202.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_3p/player1" unique_id=1340485689]
+libraries/ = SubResource("AnimationLibrary_jph6s")
+autoplay = &"SlideInLeft"
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_3p" unique_id=1518096803]
+offset_left = 80.0
+offset_top = 224.0
+offset_right = 1048.0
+offset_bottom = 312.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 80
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_3p/player1_score" unique_id=788541896]
+libraries/ = SubResource("AnimationLibrary_tqa5w")
+autoplay = &"SlideInLeft"
+
+[node name="player2" type="Label" parent="MPFCarousel/last_scores_3p" unique_id=95712716]
+top_level = true
+offset_left = 640.0
+offset_top = 400.0
+offset_right = 1264.0
+offset_bottom = 498.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_3p/player2" unique_id=1443563793]
+libraries/ = SubResource("AnimationLibrary_4oifg")
+autoplay = &"SlideInLeft"
+
+[node name="player2_score" type="Label" parent="MPFCarousel/last_scores_3p" unique_id=1314337476]
+offset_left = 464.0
+offset_top = 520.0
+offset_right = 1440.0
+offset_bottom = 643.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 80
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_3p/player2_score" unique_id=853192481]
+libraries/ = SubResource("AnimationLibrary_pwgr4")
+autoplay = &"SlideInLeft"
+
+[node name="player3" type="Label" parent="MPFCarousel/last_scores_3p" unique_id=1006611969]
+top_level = true
+offset_left = 1064.0
+offset_top = 696.0
+offset_right = 1688.0
+offset_bottom = 794.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 3"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_3p/player3" unique_id=1448204134]
+libraries/ = SubResource("AnimationLibrary_nkas7")
+autoplay = &"SlideInLeft"
+
+[node name="player3_score" type="Label" parent="MPFCarousel/last_scores_3p" unique_id=991408530]
+offset_left = 904.0
+offset_top = 816.0
+offset_right = 1880.0
+offset_bottom = 939.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 80
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player3_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_3p/player3_score" unique_id=1564858599]
+libraries/ = SubResource("AnimationLibrary_ejx3y")
+autoplay = &"SlideInLeft"
+
+[node name="last_scores_4p" type="Node2D" parent="MPFCarousel" unique_id=575328375]
+
+[node name="player1" type="Label" parent="MPFCarousel/last_scores_4p" unique_id=1737878080]
+top_level = true
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 688.0
+offset_bottom = 170.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_4p/player1" unique_id=49109012]
+libraries/ = SubResource("AnimationLibrary_rfi5l")
+autoplay = &"SlideInLeft"
+
+[node name="player1_score" type="Label" parent="MPFCarousel/last_scores_4p" unique_id=1277098595]
+offset_left = -144.0
+offset_top = 176.0
+offset_right = 824.0
+offset_bottom = 264.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 80
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player1_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_4p/player1_score" unique_id=1612247870]
+libraries/ = SubResource("AnimationLibrary_gbf6v")
+autoplay = &"SlideInLeft"
+
+[node name="player2" type="Label" parent="MPFCarousel/last_scores_4p" unique_id=679857924]
+top_level = true
+offset_left = 408.0
+offset_top = 328.0
+offset_right = 1032.0
+offset_bottom = 426.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_4p/player2" unique_id=2067325789]
+libraries/ = SubResource("AnimationLibrary_npkhb")
+autoplay = &"SlideInLeft"
+
+[node name="player2_score" type="Label" parent="MPFCarousel/last_scores_4p" unique_id=2104816966]
+offset_left = 216.0
+offset_top = 440.0
+offset_right = 1192.0
+offset_bottom = 563.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 80
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player2_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_4p/player2_score" unique_id=1724742664]
+libraries/ = SubResource("AnimationLibrary_qrq3f")
+autoplay = &"SlideInLeft"
+
+[node name="player3" type="Label" parent="MPFCarousel/last_scores_4p" unique_id=411694152]
+top_level = true
+offset_left = 856.0
+offset_top = 568.0
+offset_right = 1480.0
+offset_bottom = 666.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 3"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_4p/player3" unique_id=1943076280]
+libraries/ = SubResource("AnimationLibrary_52abh")
+autoplay = &"SlideInLeft"
+
+[node name="player3_score" type="Label" parent="MPFCarousel/last_scores_4p" unique_id=1181127320]
+offset_left = 672.0
+offset_top = 680.0
+offset_right = 1648.0
+offset_bottom = 803.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 80
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player3_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_4p/player3_score" unique_id=1966492220]
+libraries/ = SubResource("AnimationLibrary_pbj0j")
+autoplay = &"SlideInLeft"
+
+[node name="player4" type="Label" parent="MPFCarousel/last_scores_4p" unique_id=1883638132]
+top_level = true
+offset_left = 1152.0
+offset_top = 803.0
+offset_right = 1776.0
+offset_bottom = 901.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Player 4"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_4p/player4" unique_id=1970755661]
+libraries/ = SubResource("AnimationLibrary_vxl8n")
+autoplay = &"SlideInLeft"
+
+[node name="player4_score" type="Label" parent="MPFCarousel/last_scores_4p" unique_id=1522090442]
+offset_left = 944.0
+offset_top = 912.0
+offset_right = 1920.0
+offset_bottom = 1035.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 80
+text = "1000000"
+horizontal_alignment = 1
+script = ExtResource("8_8pccq")
+variable_type = 2
+variable_name = "player4_score"
+comma_separate = true
+min_digits = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/last_scores_4p/player4_score" unique_id=1353960118]
+libraries/ = SubResource("AnimationLibrary_umjrm")
+autoplay = &"SlideInLeft"
+
+[node name="makercredits" type="Label" parent="MPFCarousel" unique_id=1312108088]
+top_level = true
+layout_mode = 0
+offset_left = 289.0
+offset_top = 63.0
+offset_right = 1667.0
+offset_bottom = 1036.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 56
+text = "Game Concept and Build:
+Michael Rausch
+
+
+Rules:
+Michael Rausch and 
+Stephen donaldson
+
+art:
+ricardo silva and
+jess hunt
+
+
+Code programming:
+Stephen Donaldson
+"
+horizontal_alignment = 1
+
+[node name="mpf_logo" type="Sprite2D" parent="MPFCarousel" unique_id=1214657778]
+top_level = true
+position = Vector2(976, 504)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("11_df38b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/mpf_logo" unique_id=587848195]
+libraries/ = SubResource("AnimationLibrary_dja3n")
+autoplay = &"SlideInLeft"
+
+[node name="show_logo" type="Sprite2D" parent="MPFCarousel" unique_id=563616773]
+top_level = true
+position = Vector2(976, 504)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("12_pw77f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/show_logo" unique_id=1675724717]
+libraries/ = SubResource("AnimationLibrary_hy23r")
+autoplay = &"SlideInLeft"
+
+[node name="pressstart" type="Label" parent="MPFCarousel" unique_id=311104279]
+top_level = true
+layout_mode = 0
+offset_left = 480.0
+offset_top = 448.0
+offset_right = 1477.0
+offset_bottom = 571.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 120
+text = "Press Start"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/pressstart" unique_id=1851704603]
+libraries/ = SubResource("AnimationLibrary_abcbf")
+autoplay = &"SlideInLeft"
+
+[node name="riot_logo" type="Sprite2D" parent="MPFCarousel" unique_id=1505272788]
+top_level = true
+position = Vector2(976, 504)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("13_nlrlk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/riot_logo" unique_id=973192800]
+libraries/ = SubResource("AnimationLibrary_ovmjf")
+autoplay = &"SlideInLeft"
+
+[node name="specialthanks" type="Label" parent="MPFCarousel" unique_id=614757319]
+top_level = true
+layout_mode = 0
+offset_left = 320.0
+offset_top = 224.0
+offset_right = 1660.0
+offset_bottom = 741.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 60
+text = "Special Thanks:
+
+
+Kelli Goins
+Trident Pinball Community
+NAthaniel Hornblower
+Abe Vigoda
+tim uomoto"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/specialthanks" unique_id=754170437]
+libraries/ = SubResource("AnimationLibrary_3esil")
+autoplay = &"SlideInLeft"
+
+[node name="version" type="Label" parent="MPFCarousel" unique_id=1475261062]
+top_level = true
+layout_mode = 0
+offset_left = 480.0
+offset_top = 448.0
+offset_right = 1571.0
+offset_bottom = 546.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_p3rss")
+theme_override_font_sizes/font_size = 96
+text = "Version 0.96"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MPFCarousel/version" unique_id=1028968117]
+libraries/ = SubResource("AnimationLibrary_agbc3")
+autoplay = &"RESET"

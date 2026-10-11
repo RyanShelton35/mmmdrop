@@ -1,0 +1,111 @@
+#config_version=6
+
+timers:
+  attract_carousel_timer:
+    end_value: 5
+    tick_interval: 1s
+    start_running: False
+    control_events:
+      - event: carousel_item_highlighted
+        action: restart
+      - event: flipper_cradle
+        action: stop
+      - event: flipper_cradle_release
+        action: restart
+      - event: timer_attract_intro_timer_complete
+        action: start
+      - event: game_ended
+        action: start
+      - event: mca_sequence_hit
+        action: pause
+      - event: adr_sequence_hit
+        action: pause
+      - event: christmas_sequence_hit
+        action: pause
+      - event: muppets_sequence_hit
+        action: pause
+      - event: slide_ghostbusters_removed
+        action: restart
+      - event: slide_friends_removed
+        action: restart
+      - event: slide_beastiemuppets_removed
+        action: restart
+      - event: slide_jinglebells_removed
+        action: restart
+  attract_intro_timer:
+    end_value: 16
+    tick_interval: 1s
+    start_running: True
+    control_events:
+      - event: mode_attract_started{machine.game_just_played==0}
+        action: restart
+      - event: game_started
+        action: stop
+  mca_attract_video_timer:
+    end_value: 192
+    tick_interval: 1s
+    start_running: False
+    control_events:
+      - event: slide_ghostbusters_active
+        action: restart
+      - event: game_started
+        action: stop
+      - event: flipper_cancel
+        action: jump
+        value: 192
+      - event: slide_ghostbusters_removed
+        action: jump
+        value: 0
+      - event: slide_ghostbusters_removed
+        action: pause
+  adr_attract_video_timer:
+    end_value: 49
+    tick_interval: 1s
+    start_running: False
+    control_events:
+      - event: slide_friends_active
+        action: restart
+      - event: game_started
+        action: stop
+      - event: flipper_cancel
+        action: jump
+        value: 49
+      - event: slide_friends_removed
+        action: jump
+        value: 0
+      - event: slide_friends_removed
+        action: pause
+  christmas_attract_video_timer:
+    end_value: 54
+    tick_interval: 1s
+    start_running: False
+    control_events:
+      - event: slide_jinglebells_active
+        action: restart
+      - event: game_started
+        action: stop
+      - event: flipper_cancel
+        action: jump
+        value: 54
+      - event: slide_jinglebells_removed
+        action: jump
+        value: 0
+      - event: slide_jinglebells_removed
+        action: pause
+  muppets_attract_video_timer:
+    end_value: 54
+    tick_interval: 1s
+    start_running: False
+    control_events:
+      - event: slide_beastiemuppets_active
+        action: restart
+      - event: game_started
+        action: stop
+      - event: flipper_cancel
+        action: jump
+        value: 54
+      - event: slide_beastiemuppets_removed
+        action: jump
+        value: 0
+      - event: slide_beastiemuppets_removed
+        action: pause
