@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://dhcmmls7xggxh"]
+
+[ext_resource type="AudioStream" uid="uid://dk0tb1vq8j5by" path="res://modes/jukebox/sounds/checkyourhead20.ogg" id="1_1k8mj"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_1k8mj")

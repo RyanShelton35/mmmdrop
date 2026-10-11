@@ -2,20 +2,16 @@
 
 - duration: 100ms
   lights:
-    l_scoopmode_square_led: Aqua
-    l_scoop_arrow_led: stop
+    l_inner_loop_x: Aqua
+    l_innerloop_arrow_led: stop
 - duration: 200ms
   lights:
-    l_scoopmode_circle2_led: Aqua
+    l_innerloopcombo_circle_led: Aqua
 - duration: 200ms
   lights:
-    l_scoopcombo_circle_led: Aqua
-    l_scoopmode_square_led: stop
-- duration: 200ms
-  lights:
-    l_scoop_arrow_led: Aqua
-    l_scoopmode_circle2_led: stop
+    l_innerloop_arrow_led: Aqua
+    l_inner_loop_x: stop
 - duration: 300ms
   lights:
-    l_scoopcombo_circle_led: stop
+    l_innerloopcombo_circle_led: stop
 

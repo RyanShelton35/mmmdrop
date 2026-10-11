@@ -1,0 +1,35 @@
+#config_version=6
+
+mode:
+  start_events: show_mode_select_widget
+  stop_events: start_jukebox, restart_attract, start_finalwizard
+  game_mode: False
+  code: mpf.modes.carousel.code.carousel.Carousel
+  priority: 3000
+
+
+mode_settings:
+  selectable_items:
+    - jukebox
+    - finalwizard
+    - normal
+  select_item_events: flipper_cancel
+  next_item_events: s_right_flipper_active
+  previous_item_events: s_left_flipper_active
+
+
+slide_player:
+  mode_gamemodeselectcarousel_started:
+    attract_load:
+      action: remove
+    attract:
+      action: remove
+    ghostbusters:
+      action: remove
+    friends:
+      action: remove
+    jukebox:
+      action: remove
+    gamemodeselect:
+      action: play
+      priority: 10000

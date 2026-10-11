@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccg1vhpo2h33l"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_8ndlb"]
+[ext_resource type="VideoStream" uid="uid://bng0dn0hnxnev" path="res://modes/wizardcarousel/slides/HoldItNowHitItMV.ogv" id="2_mj7xt"]
+[ext_resource type="Script" uid="uid://bov7mrgxslshq" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="3_s35au"]
+[ext_resource type="FontFile" uid="uid://b2or65be6mpbg" path="res://fonts/ratcage.TTF" id="6_jsrle"]
+[ext_resource type="Texture2D" uid="uid://ddcnxju02dwc" path="res://assets/white-arrow-png-41943.png" id="7_11k5h"]
+[ext_resource type="Script" uid="uid://dpe3dq8axt3g7" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="8_u10fs"]
+
+[node name="gamemodeselectcarousel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_8ndlb")
+
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_mj7xt")
+autoplay = true
+expand = true
+loop = true
+script = ExtResource("3_s35au")
+hide_behavior = 1
+preview_in_editor = true
+
+[node name="layitdown" type="Label" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 41.0
+offset_right = 1920.0
+offset_bottom = 250.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_jsrle")
+theme_override_font_sizes/font_size = 100
+text = "choose a mode:"
+horizontal_alignment = 1
+
+[node name="arrowright" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(1464, 652)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_11k5h")
+
+[node name="arrowleft" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(469, 652)
+rotation = -3.1415925
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_11k5h")
+
+[node name="MPFCarousel" type="Control" parent="."]
+top_level = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_u10fs")
+carousel_name = "gamemodeselectcarousel"
+
+[node name="jukebox" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 595.0
+offset_right = 1927.0
+offset_bottom = 754.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_jsrle")
+theme_override_font_sizes/font_size = 111
+text = "jukebox"
+horizontal_alignment = 1
+
+[node name="finalwizard" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 360.0
+offset_right = 1917.0
+offset_bottom = 905.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_jsrle")
+theme_override_font_sizes/font_size = 131
+text = "fight
+for
+your
+right"
+horizontal_alignment = 1
+
+[node name="normal" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 570.0
+offset_right = 1925.0
+offset_bottom = 861.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("6_jsrle")
+theme_override_font_sizes/font_size = 141
+text = "normal"
+horizontal_alignment = 1

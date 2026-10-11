@@ -167,25 +167,33 @@ switches:
     tags: playfield_active
     label: "Right Orbit"
   s_service_esc:
-    number: 3208-16
+    number: cab-0
     tags: service_esc
     debounce: normal
     label: "Service Door Esc"
   s_service_down:
-    number: 3208-17
+    number: cab-1
     tags: service_down
     debounce: normal
     label: "Service Door Down"
   s_service_up:
-    number: 3208-18
+    number: cab-2
     tags: service_up
     debounce: normal
     label: "Service Door Up"
   s_service_enter:
-    number: 3208-19
+    number: cab-3
     tags: service_enter
     debounce: normal
     label: "Service Door Enter"
+  s_coin_right:
+    number: cab-4
+    debounce: normal
+    label: "Coin Door Right"
+  s_coin_left:
+    number: cab-5
+    debounce: normal
+    label: "Coin Door Left"
 
 
 drop_targets:

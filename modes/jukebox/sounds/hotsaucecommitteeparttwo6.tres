@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://y36upq815lwa"]
+
+[ext_resource type="AudioStream" uid="uid://da3hdtwnxogy1" path="res://modes/jukebox/sounds/hotsaucecommitteeparttwo6.ogg" id="1_ummhk"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_ummhk")

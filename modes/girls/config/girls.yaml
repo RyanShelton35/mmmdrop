@@ -44,6 +44,12 @@ variable_player:
     girls_blocking_flag:
       int: 1
       action: set
+    active_mode:
+      string: "Girls"
+      action: set
+    active_mode_objective:
+      string: "Switch Frenzy!"
+      action: set
   pop1_hit:
     score:
       int: 750000 * current_player.playfield_x * current_player.loop_shot_multiplier

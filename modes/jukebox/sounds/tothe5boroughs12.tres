@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://dkam3pifgvrgm"]
+
+[ext_resource type="AudioStream" uid="uid://jegqxpikb6jw" path="res://modes/jukebox/sounds/tothe5boroughs12.ogg" id="1_kf7pw"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_kf7pw")

@@ -33,11 +33,15 @@ music_volume:
 player1_score:
   expire: null
   expire_secs: null
-  value: 27473890
+  value: 9990
 this_game_match_video:
   expire: null
   expire_secs: null
   value: 1
+this_game_player_callouts:
+  expire: null
+  expire_secs: null
+  value: 2
 voice_volume:
   expire: null
   expire_secs: null

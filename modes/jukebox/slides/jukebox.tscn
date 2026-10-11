@@ -1,0 +1,2675 @@
+[gd_scene load_steps=12 format=3 uid="uid://wgt8wppoghen"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_6fwrc"]
+[ext_resource type="FontFile" uid="uid://b2or65be6mpbg" path="res://fonts/ratcage.TTF" id="2_qgblj"]
+[ext_resource type="Script" uid="uid://dpe3dq8axt3g7" path="res://addons/mpf-gmc/classes/mpf_carousel.gd" id="3_fi44c"]
+[ext_resource type="Texture2D" uid="uid://bmmhcuy3oswo8" path="res://assets/HelloNasty.webp" id="4_85xhb"]
+[ext_resource type="Texture2D" uid="uid://bldchd71jvxls" path="res://assets/LicensedToIll.jpg" id="5_y2kd2"]
+[ext_resource type="Texture2D" uid="uid://fy7wp70m04a3" path="res://assets/Beastie_Boys_-_To_the_5_Boroughs.png" id="6_m3etf"]
+[ext_resource type="Texture2D" uid="uid://dpqmqttajwyak" path="res://assets/IllCommunication.jpg" id="7_l74lq"]
+[ext_resource type="Texture2D" uid="uid://dvrrx3ek1s05w" path="res://assets/CheckYourHead.jpg" id="8_5852b"]
+[ext_resource type="Texture2D" uid="uid://dwb0rdaftnsi7" path="res://assets/beastieboys_hotsauce.jpg" id="9_grf1n"]
+[ext_resource type="Texture2D" uid="uid://mpkeol15koho" path="res://assets/PaulsBoutique.jpg" id="10_rpleb"]
+[ext_resource type="Texture2D" uid="uid://daje2624l04ns" path="res://assets/BeastieBoysTheMixUp.jpg" id="12_yb0xj"]
+
+[node name="jukebox" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6fwrc")
+
+[node name="MPFCarousel" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_fi44c")
+carousel_name = "jukebox"
+
+[node name="licensedtoill1" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 756.0
+offset_right = 1920.0
+offset_bottom = 1011.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"rhymin' and stealin'\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill1"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill2" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"the new style\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill2"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill3" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"She's Crafty\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill3"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill4" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"Posse in effect\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill4"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill5" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"Slow ride\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill5"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill6" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"girls\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill6"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill7" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"fight for your right\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill7"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill8" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"no sleep til brooklyn\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill8"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill9" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"paul revere\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill9"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill10" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"hold it now, hit it\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill10"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill11" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"brass monkey\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill11"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill12" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"Slow and low\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill12"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="licensedtoill13" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "licensed to ill
+
+\"time to get ill\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/licensedtoill13"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_y2kd2")
+
+[node name="paulsboutique1" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"to all the girls\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique1"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique2" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"shake your rump\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique2"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique3" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"johnny ryall\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique3"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique4" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"egg man\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique4"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique5" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"high plains drifter\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique5"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique6" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"the sounds of science\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique6"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique7" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"3-minute rule\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique7"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique8" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"hey ladies\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique8"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique9" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"5-piece chicken dinner\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique9"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique10" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 734.0
+offset_right = 1928.0
+offset_bottom = 1075.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"looking down the 
+barrel of a gun\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique10"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique11" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"car thief\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique11"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique12" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"what comes around\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique12"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique13" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"shadrach\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique13"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique14" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"ask for janice\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique14"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="paulsboutique15" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "paul's boutique
+
+\"b-boy bouillabaisse\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/paulsboutique15"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("10_rpleb")
+
+[node name="checkyourhead1" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"jimmy james\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead1"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead2" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"funky boss\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead2"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead3" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"pass the mic\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead3"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead4" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"gratitude\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead4"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead5" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"lighten up\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead5"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead6" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"finger lickin' good\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead6"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead7" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"so what'cha want\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead7"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead8" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"the biz vs. the nuge\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead8"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead9" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"time for livin\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead9"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead10" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"something's got to give\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead10"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead11" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"the blue nun\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead11"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead12" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"stand together\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead12"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead13" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"pow\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead13"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead14" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"the maestro\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead14"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead15" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"groove holmes\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead15"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead16" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"live at p.j.'s\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead16"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead17" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"mark on the bus\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead17"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead18" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"professor booty\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead18"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead19" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"in 3's\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead19"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="checkyourhead20" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "check your head
+
+\"namaste\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/checkyourhead20"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(3, 3)
+texture = ExtResource("8_5852b")
+
+[node name="illcommunication1" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"sure shot\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication1"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication2" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"tough guy\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication2"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication3" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 736.0
+offset_right = 1921.0
+offset_bottom = 1077.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"B-Boys Makin' 
+With The Freak Freak\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication3"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication4" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"bobo on the corner\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication4"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication5" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"root down\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication5"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication6" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"sabotage\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication6"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication7" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"get it together\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication7"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication8" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"sabrosa\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication8"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication9" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"the update\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication9"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication10" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"futterman's rule\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication10"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication11" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"alright here this\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication11"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication12" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"eugene's lament\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication12"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication13" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"flute loop\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication13"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication14" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"do it\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication14"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication15" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"ricky's theme\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication15"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication16" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"heart attack man\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication16"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication17" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"the scoop\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication17"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication18" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"shambala\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication18"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication19" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"bodhisattva vow\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication19"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="illcommunication20" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "ill communication
+
+\"transitions\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/illcommunication20"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_l74lq")
+
+[node name="hellonasty1" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"super disco breakin'\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty1"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty2" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"the move\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty2"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty3" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"remote control\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty3"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty4" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"song for the man\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty4"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty5" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"just a test\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty5"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty6" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"body movin'\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty6"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty7" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"intergalactic\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty7"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty8" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"sneakin' out the hospital\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty8"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty9" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"putting shame in your game\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty9"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty10" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"flowin' prose\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty10"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty11" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"and me\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty11"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty12" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"three mc's and one dj\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty12"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty13" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 736.0
+offset_right = 1921.0
+offset_bottom = 1077.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"The Grasshopper Unit 
+(Keep Movin')\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty13"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty14" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"song for junior\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty14"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty15" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"i don't know\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty15"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty16" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"the negotiation limerick file\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty16"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty17" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"electrify\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty17"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty18" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"picture this\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty18"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty19" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"unite\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty19"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty20" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"dedication\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty20"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty21" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"dr. lee, phd\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty21"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="hellonasty22" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hello nasty
+
+\"instant death\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hellonasty22"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_85xhb")
+
+[node name="tothe5boroughs1" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"ch-check it out\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs1"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs2" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"right right now now\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs2"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs3" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"3 the hard way\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs3"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs4" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"time to build\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs4"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs5" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"rhyme the rhyme well\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs5"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs6" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"triple trouble\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs6"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs7" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"hey F# you\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs7"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs8" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"oh word\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs8"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs9" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"that's it that's all\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs9"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs10" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"all lifestyles\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs10"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs11" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"shazam!\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs11"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs12" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"an open letter to nyc\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs12"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs13" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"crawlspace\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs13"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs14" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"the brouhaha\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs14"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="tothe5boroughs15" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "to the 5 boroughs
+
+\"we got the\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/tothe5boroughs15"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("6_m3etf")
+
+[node name="themixup1" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"b for my name\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup1"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup2" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"14th st. break\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup2"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup3" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"suco de tangerina\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup3"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup4" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"the gala event\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup4"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup5" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"electric worm\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup5"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup6" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"freaky hijiki\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup6"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup7" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"off the grid\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup7"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup8" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"the rate cage\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup8"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup9" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"the melee\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup9"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup10" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"dramastically different\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup10"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup11" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"the cousin of death\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup11"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="themixup12" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "the mix-up
+
+\"the kangaroo rat\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/themixup12"]
+top_level = true
+position = Vector2(966, 381)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("12_yb0xj")
+
+[node name="hotsaucecommitteeparttwo1" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"make some noise\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo1"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo2" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"nonstop disco powerpack\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo2"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo3" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"ok\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo3"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo4" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"too many rappers\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo4"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo5" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"say it\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo5"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo6" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"the bill harper collection\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo6"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo7" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 734.0
+offset_right = 1919.0
+offset_bottom = 1075.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"don't play no game 
+that i can't win\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo7"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo8" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"long burn the fire\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo8"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo9" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"funky donkey"
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo9"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo10" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"the larry routine\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo10"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo11" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"tadlock's glasses\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo11"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo12" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"lee majors come again\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo12"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo13" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_top = 738.0
+offset_right = 1914.0
+offset_bottom = 1079.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"Multilateral Nuclear 
+Disarmament\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo13"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo14" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 736.0
+offset_right = 1919.0
+offset_bottom = 1077.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"here's a little 
+something for ya\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo14"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo15" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 769.0
+offset_right = 1926.0
+offset_bottom = 1024.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"crazy ass shit\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo15"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")
+
+[node name="hotsaucecommitteeparttwo16" type="Label" parent="MPFCarousel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 743.0
+offset_right = 1921.0
+offset_bottom = 1084.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qgblj")
+theme_override_font_sizes/font_size = 81
+text = "hot sauce committee part two
+
+\"the lisa lisa 
+full force routine\""
+horizontal_alignment = 1
+
+[node name="albumart" type="Sprite2D" parent="MPFCarousel/hotsaucecommitteeparttwo16"]
+top_level = true
+position = Vector2(966, 381)
+texture = ExtResource("9_grf1n")

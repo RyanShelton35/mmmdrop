@@ -61,6 +61,216 @@ script = ExtResource("5_yx077")
 variable_name = "ball"
 template_string = "Ball %s"
 
+[node name="BottomRightSpraypaint" type="Sprite2D" parent="."]
+position = Vector2(1528, 910)
+scale = Vector2(0.7486459, 0.707037)
+texture = ExtResource("3_vk8qw")
+
+[node name="Modesplayed" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1307.0
+offset_top = 713.0
+offset_right = 1782.0
+offset_bottom = 787.0
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 48
+text = "Modes played:"
+
+[node name="modes_played" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1295.0
+offset_top = 774.0
+offset_right = 1727.0
+offset_bottom = 838.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 60
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("5_yx077")
+variable_name = "modes_played"
+min_digits = 1
+initialize_empty = false
+min_players = 1
+
+[node name="Modescompleted" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1247.0
+offset_top = 876.0
+offset_right = 1840.0
+offset_bottom = 950.0
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 48
+text = "Modes completed:"
+
+[node name="modes_completed" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 935.0
+offset_right = 1732.0
+offset_bottom = 999.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 60
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("5_yx077")
+variable_name = "modes_completed"
+min_digits = 1
+initialize_empty = false
+min_players = 1
+
+[node name="BottomLeftSpraypaint" type="Sprite2D" parent="."]
+position = Vector2(255.99988, 928.99994)
+scale = Vector2(0.48999998, 0.48999998)
+texture = ExtResource("4_luu7j")
+
+[node name="combos" type="Label" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 926.0
+offset_right = 429.0
+offset_bottom = 990.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 60
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("5_yx077")
+variable_name = "combos"
+comma_separate = true
+min_digits = 1
+initialize_empty = false
+min_players = 1
+
+[node name="Combos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 852.0
+offset_right = 386.0
+offset_bottom = 926.0
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 48
+text = "Combos:"
+
+[node name="TopRightSpraypaint2" type="Sprite2D" parent="."]
+position = Vector2(1607.5001, 289.69992)
+scale = Vector2(1.0338541, 0.65981483)
+texture = ExtResource("4_luu7j")
+
+[node name="ObjectiveText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1350.0
+offset_top = 216.0
+offset_right = 1744.0
+offset_bottom = 278.0
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 48
+text = "objective:"
+horizontal_alignment = 1
+
+[node name="active_mode" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1239.0
+offset_top = 74.0
+offset_right = 1857.0
+offset_bottom = 211.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 60
+text = "triple trouble"
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("5_yx077")
+variable_name = "active_mode"
+comma_separate = true
+min_digits = 1
+initialize_empty = false
+min_players = 1
+
+[node name="active_mode_objective" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1164.0
+offset_top = 300.0
+offset_right = 1927.0
+offset_bottom = 543.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 40
+text = "alternating ramps/orbits, finish at lower pop"
+horizontal_alignment = 1
+autowrap_mode = 3
+script = ExtResource("5_yx077")
+variable_name = "active_mode_objective"
+comma_separate = true
+min_digits = 1
+initialize_empty = false
+min_players = 1
+
+[node name="BotMidSpraypaint" type="Sprite2D" parent="."]
+position = Vector2(923.99994, 882)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_luu7j")
+
+[node name="bonusmult" type="Label" parent="."]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 786.0
+offset_right = 1102.0
+offset_bottom = 892.0
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 48
+text = "bonus
+multiplier:"
+horizontal_alignment = 1
+
+[node name="x" type="Label" parent="."]
+layout_mode = 0
+offset_left = 885.0
+offset_top = 941.0
+offset_right = 1003.0
+offset_bottom = 1001.0
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 48
+text = "x"
+horizontal_alignment = 1
+
+[node name="bonus_multiplier" type="Label" parent="."]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 930.0
+offset_right = 943.0
+offset_bottom = 994.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_0f4s6")
+theme_override_font_sizes/font_size = 60
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("5_yx077")
+variable_name = "bonus_multiplier"
+comma_separate = true
+min_digits = 1
+initialize_empty = false
+min_players = 1
+
 [node name="TopLeftSpraypaint" type="Sprite2D" parent="."]
 position = Vector2(448.00003, 533)
 scale = Vector2(0.85520834, 0.88055557)
@@ -68,10 +278,10 @@ texture = ExtResource("3_vk8qw")
 
 [node name="scores" type="Label" parent="."]
 layout_mode = 0
-offset_left = 253.0
-offset_top = 228.0
-offset_right = 540.0
-offset_bottom = 302.0
+offset_left = 302.0
+offset_top = 243.0
+offset_right = 589.0
+offset_bottom = 317.0
 theme_override_constants/outline_size = 32
 theme_override_fonts/font = ExtResource("4_0f4s6")
 theme_override_font_sizes/font_size = 48
@@ -245,154 +455,3 @@ template_string = "Player 4"
 format_string = "Player 4"
 initialize_empty = false
 min_players = 4
-
-[node name="BottomRightSpraypaint" type="Sprite2D" parent="."]
-position = Vector2(1528, 910)
-scale = Vector2(0.7486459, 0.707037)
-texture = ExtResource("3_vk8qw")
-
-[node name="Modesplayed" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1307.0
-offset_top = 713.0
-offset_right = 1782.0
-offset_bottom = 787.0
-theme_override_constants/outline_size = 32
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 48
-text = "Modes played:"
-
-[node name="modes_played" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1295.0
-offset_top = 774.0
-offset_right = 1727.0
-offset_bottom = 838.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 60
-text = "1"
-horizontal_alignment = 1
-script = ExtResource("5_yx077")
-variable_name = "modes_played"
-min_digits = 1
-initialize_empty = false
-min_players = 1
-
-[node name="Modescompleted" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1247.0
-offset_top = 876.0
-offset_right = 1840.0
-offset_bottom = 950.0
-theme_override_constants/outline_size = 32
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 48
-text = "Modes completed:"
-
-[node name="modes_completed" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1300.0
-offset_top = 935.0
-offset_right = 1732.0
-offset_bottom = 999.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 60
-text = "1"
-horizontal_alignment = 1
-script = ExtResource("5_yx077")
-variable_name = "modes_completed"
-min_digits = 1
-initialize_empty = false
-min_players = 1
-
-[node name="BottomLeftSpraypaint" type="Sprite2D" parent="."]
-position = Vector2(852.4, 915.6)
-scale = Vector2(0.48999998, 0.48999998)
-texture = ExtResource("4_luu7j")
-
-[node name="combos" type="Label" parent="."]
-layout_mode = 0
-offset_left = 598.4
-offset_top = 923.60004
-offset_right = 1030.4
-offset_bottom = 987.60004
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 60
-text = "1"
-horizontal_alignment = 1
-script = ExtResource("5_yx077")
-variable_name = "combos"
-comma_separate = true
-min_digits = 1
-initialize_empty = false
-min_players = 1
-
-[node name="Combos" type="Label" parent="."]
-layout_mode = 0
-offset_left = 698.4
-offset_top = 844.60004
-offset_right = 985.4
-offset_bottom = 918.60004
-theme_override_constants/outline_size = 32
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 48
-text = "Combos:"
-
-[node name="TopRightSpraypaint" type="Sprite2D" parent="."]
-position = Vector2(1613, 260.00006)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("4_luu7j")
-
-[node name="bonusmult" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1390.0
-offset_top = 109.00006
-offset_right = 1784.0
-offset_bottom = 215.00006
-theme_override_constants/outline_size = 32
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 48
-text = "bonus
-multiplier:"
-horizontal_alignment = 1
-
-[node name="x" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1601.0
-offset_top = 251.00006
-offset_right = 1719.0
-offset_bottom = 311.00006
-theme_override_constants/outline_size = 32
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 48
-text = "x"
-horizontal_alignment = 1
-
-[node name="bonus_multiplier" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1401.0
-offset_top = 243.00006
-offset_right = 1631.0
-offset_bottom = 307.00006
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("4_0f4s6")
-theme_override_font_sizes/font_size = 60
-text = "1"
-horizontal_alignment = 1
-script = ExtResource("5_yx077")
-variable_name = "bonus_multiplier"
-comma_separate = true
-min_digits = 1
-initialize_empty = false
-min_players = 1

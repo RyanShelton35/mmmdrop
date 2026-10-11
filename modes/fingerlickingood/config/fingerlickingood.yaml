@@ -20,6 +20,12 @@ variable_player:
     fingerlickingood_boost:
       int: 1
       action: set
+    active_mode:
+      string: "Finger Lickin' Good"
+      action: set
+    active_mode_objective:
+      string: "Ramps boost value, lower pop standup completes"
+      action: set
   timer_fingerlickingood_intro_show_tick:
     fingerlickingood_intro_show_variable_times_100:
       int: device.timers.fingerlickingood_intro_show.ticks * 100
@@ -319,6 +325,19 @@ show_player:
   timer_fingerlickingood_intro_show_complete:
     fingerlickingood_stadium_intro_lights:
       action: stop
+  left_ramp_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+  right_ramp_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+  fingerlickingood_pop_standup_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
 
 
 

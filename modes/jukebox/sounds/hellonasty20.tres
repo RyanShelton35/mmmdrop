@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://csr8txpyfajio"]
+
+[ext_resource type="AudioStream" uid="uid://qnvhec5efxlm" path="res://modes/jukebox/sounds/hellonasty20.ogg" id="1_ix61e"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_ix61e")

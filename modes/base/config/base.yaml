@@ -204,6 +204,10 @@ slide_player:
       action: remove
     attract_load:
       action: remove
+    jukebox:
+      action: remove
+    gamemodeselect:
+      action: remove
   mode_intergalactic_failed:
     intergalactic:
       action: remove
@@ -717,6 +721,8 @@ slide_player:
       action: remove
     makesomenoise_spins_counter:
       action: remove
+    makesomenoise_damagewave_counter:
+      action: remove
     makesomenoise_final_shot_lit:
       action: remove
     makesomenoise_superjackpot:
@@ -763,40 +769,80 @@ sound_player:
       action: play
       bus: music
       loops: 3
-  drop_target_top_down:
+  drop_target_top_down{current_player.superdrops_active==0}:
     drop_sound_random:
       action: play
       bus: effects
       max_queue_time: 1s
-  drop_target_middle_down:
+  drop_target_middle_down{current_player.superdrops_active==0}:
     drop_sound_random:
       action: play
       bus: effects
       max_queue_time: 1s
-  drop_target_bottom_down:
+  drop_target_bottom_down{current_player.superdrops_active==0}:
     drop_sound_random:
       action: play
       bus: effects
       max_queue_time: 1s
-  spinner_hit:
+  drop_target_top_down{current_player.superdrops_active==1}:
+    super_drop_sound:
+      action: play
+      bus: effects
+      max_queue_time: 1s
+  drop_target_middle_down{current_player.superdrops_active==1}:
+    super_drop_sound:
+      action: play
+      bus: effects
+      max_queue_time: 1s
+      volume: 0.8
+  drop_target_bottom_down{current_player.superdrops_active==1}:
+    super_drop_sound:
+      action: play
+      bus: effects
+      max_queue_time: 1s
+      volume: 0.8
+  spinner_hit{current_player.superspins_active==0}:
     spinner_sound:
       action: play
       bus: effects
       volume: 0.92
-  pop1_hit:
+  spinner_hit{current_player.superspins_active==1}:
+    super_spinner_sound:
+      action: play
+      bus: effects
+      volume: 0.8
+  pop1_hit{current_player.superpops_active==0}:
     pops_sound:
       action: play
       bus: effects
       max_queue_time: 250ms
       volume: 0.8
-  pop2_hit:
+  pop2_hit{current_player.superpops_active==0}:
     pops_sound:
       action: play
       bus: effects
       max_queue_time: 250ms
       volume: 0.8
-  pop3_hit:
+  pop3_hit{current_player.superpops_active==0}:
     pops_sound_rewind:
+      action: play
+      bus: effects
+      max_queue_time: 250ms
+      volume: 0.8
+  pop1_hit{current_player.superpops_active==1}:
+    super_pops_sound:
+      action: play
+      bus: effects
+      max_queue_time: 250ms
+      volume: 0.8
+  pop2_hit{current_player.superpops_active==1}:
+    super_pops_sound:
+      action: play
+      bus: effects
+      max_queue_time: 250ms
+      volume: 0.8
+  pop3_hit{current_player.superpops_active==1}:
+    super_pops_sound:
       action: play
       bus: effects
       max_queue_time: 250ms
@@ -825,38 +871,74 @@ sound_player:
       bus: effects
       max_queue_time: 250ms
       volume: 0.8
-  three_bank_standup_hit:
+  three_bank_standup_hit{current_player.superstandups_active==0}:
     standup_sound:
       action: play
       bus: effects
       max_queue_time: 250ms
       volume: 0.8
-  pop_standup_hit:
+  pop_standup_hit{current_player.superstandups_active==0}:
     standup_sound:
       action: play
       bus: effects
       max_queue_time: 250ms
       volume: 0.8
-  upper_pop_standup_hit:
+  upper_pop_standup_hit{current_player.superstandups_active==0}:
     standup_sound:
       action: play
       bus: effects
       max_queue_time: 250ms
       volume: 0.8
-  tshirt_top_standup_hit:
+  tshirt_top_standup_hit{current_player.superstandups_active==0}:
     standup_sound:
       action: play
       bus: effects
       max_queue_time: 250ms
       volume: 0.8
-  tshirt_bottom_standup_hit:
+  tshirt_bottom_standup_hit{current_player.superstandups_active==0}:
     standup_sound:
       action: play
       bus: effects
       max_queue_time: 250ms
       volume: 0.8
-  captive_ball_hit:
+  three_bank_standup_hit{current_player.superstandups_active==1}:
+    super_standup_sound:
+      action: play
+      bus: effects
+      max_queue_time: 250ms
+      volume: 0.8
+  pop_standup_hit{current_player.superstandups_active==1}:
+    super_standup_sound:
+      action: play
+      bus: effects
+      max_queue_time: 250ms
+      volume: 0.8
+  upper_pop_standup_hit{current_player.superstandups_active==1}:
+    super_standup_sound:
+      action: play
+      bus: effects
+      max_queue_time: 250ms
+      volume: 0.8
+  tshirt_top_standup_hit{current_player.superstandups_active==1}:
+    super_standup_sound:
+      action: play
+      bus: effects
+      max_queue_time: 250ms
+      volume: 0.8
+  tshirt_bottom_standup_hit{current_player.superstandups_active==1}:
+    super_standup_sound:
+      action: play
+      bus: effects
+      max_queue_time: 250ms
+      volume: 0.8
+  captive_ball_hit{current_player.superstandups_active==0}:
     standup_sound:
+      action: play
+      bus: effects
+      max_queue_time: 500ms
+      volume: 0.8
+  captive_ball_hit{current_player.superstandups_active==1}:
+    super_standup_sound:
       action: play
       bus: effects
       max_queue_time: 500ms
@@ -1136,6 +1218,21 @@ sound_player:
       action: load
       bus: voice
       priority: 6000
+  ball_save_instrument_boombox_collect_saving_ball:
+    ball_saved_boombox_callout:
+      action: load
+      bus: voice
+      priority: 6000
+  ball_save_instrument_microphone_collect_saving_ball:
+    ball_saved_microphone_callout:
+      action: load
+      bus: voice
+      priority: 6000
+  ball_save_instrument_turntable_collect_saving_ball:
+    ball_saved_turntable_callout:
+      action: load
+      bus: voice
+      priority: 6000
   drops_standup_start_multiball{current_player.wizard_blocking_flag==0}:
     chcheckitout_standup_callout:
       action: load
@@ -1258,6 +1355,18 @@ sound_player:
       bus: voice
   player4_start_sound_play:
     player4_start:
+      action: load
+      bus: voice
+  player2_start_sound_play_brooklyn:
+    player2_start_brooklyn:
+      action: load
+      bus: voice
+  player3_start_sound_play_brooklyn:
+    player3_start_brooklyn:
+      action: load
+      bus: voice
+  player4_start_sound_play_brooklyn:
+    player4_start_brooklyn:
       action: load
       bus: voice
   mode_end_mode_started:
@@ -1413,8 +1522,12 @@ sound_player:
     extraball_callout:
       action: load
       bus: voice
-  game_started:
+  player_callouts_1:
     player1_start:
+      action: load
+      bus: voice
+  player_callouts_2:
+    player1_start_brooklyn:
       action: load
       bus: voice
   timer_ball_waiting_autoplunge_timer_complete:
@@ -1425,6 +1538,16 @@ sound_player:
     hurryup_sound:
       action: load
       bus: voice
+  combo_hit{current_player.supercombos_active==0}:
+    combo_sound:
+      action: load
+      bus: effects
+      volume: 0.8
+  combo_hit{current_player.supercombos_active==1}:
+    super_combo_sound:
+      action: load
+      bus: effects
+      volume: 0.8
 
 
 variable_player:
@@ -1554,6 +1677,21 @@ variable_player:
     mystery_ball_save_used:
       int: 0
       action: set
+    superspins_active:
+      int: 0
+      action: set
+    supercombos_active:
+      int: 0
+      action: set
+    superdrops_active:
+      int: 0
+      action: set
+    superstandups_active:
+      int: 0
+      action: set
+    superpops_active:
+      int: 0
+      action: set
   mode_base_started{current_player.ball==1 and is_extra_ball==True}:
     bonus_multiplier:
       int: 1
@@ -1624,6 +1762,21 @@ variable_player:
     mystery_ball_save_used:
       int: 0
       action: set
+    superspins_active:
+      int: 0
+      action: set
+    supercombos_active:
+      int: 0
+      action: set
+    superdrops_active:
+      int: 0
+      action: set
+    superstandups_active:
+      int: 0
+      action: set
+    superpops_active:
+      int: 0
+      action: set
   battery_charged:
     battery_charged_yesorno:
       int: 1
@@ -1632,9 +1785,21 @@ variable_player:
     mode_blocking_flag:
       int: 0
       action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
+      action: set
   mode_paulrevere_stopped:
     mode_blocking_flag:
       int: 0
+      action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
       action: set
   mode_makesomenoise_stopped:
     mode_blocking_flag:
@@ -1652,6 +1817,12 @@ variable_player:
     girls_blocking_flag:
       int: 0
       action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
+      action: set
   mode_bodhivow_stopped:
     mode_blocking_flag:
       int: 0
@@ -1667,6 +1838,12 @@ variable_player:
       action: set
     girls_blocking_flag:
       int: 0
+      action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
       action: set
   mode_sureshot_stopped:
     mode_blocking_flag:
@@ -1684,29 +1861,71 @@ variable_player:
     girls_blocking_flag:
       int: 0
       action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
+      action: set
   mode_tripletrouble_stopped:
     mode_blocking_flag:
       int: 0
+      action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
       action: set
   mode_sabotage_stopped:
     mode_blocking_flag:
       int: 0
       action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
+      action: set
   mode_fingerlickingood_stopped:
     mode_blocking_flag:
       int: 0
+      action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
       action: set
   mode_toomanyrappers_stopped:
     mode_blocking_flag:
       int: 0
       action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
+      action: set
   mode_threemcsand1dj_stopped:
     mode_blocking_flag:
       int: 0
       action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
+      action: set
   mode_highplainsdrifter_stopped:
     mode_blocking_flag:
       int: 0
+      action: set
+    active_mode:
+      string: "Base Mode"
+      action: set
+    active_mode_objective:
+      string: "Hit Spinner to Charge Battery, Scoop to Start Mode"
       action: set
   mode_intergalactic_started:
     mode_intergalactic_score:
@@ -1822,6 +2041,14 @@ variable_player:
   match_end_game_4:
     this_game_match_video:
       int: 4
+      action: set_machine
+  player_callouts_1:
+    this_game_player_callouts:
+      int: 1
+      action: set_machine
+  player_callouts_2:
+    this_game_player_callouts:
+      int: 2
       action: set_machine
   game_ended:
     game_just_played:
@@ -1979,18 +2206,53 @@ variable_player:
   mode_superdrops_started:
     characters_collected: 1
     adroc_collected: 1
+    superdrops_active:
+      int: 1
+      action: set
+  mode_superdrops_stopped:
+    superdrops_active:
+      int: 0
+      action: set
   mode_superspins_started:
     characters_collected: 1
     miked_collected: 1
+    superspins_active:
+      int: 1
+      action: set
+  mode_superspins_stopped:
+    superspins_active:
+      int: 0
+      action: set
   mode_superstandups_started:
     characters_collected: 1
     mca_collected: 1
+    superstandups_active:
+      int: 1
+      action: set
+  mode_superstandups_stopped:
+    superstandups_active:
+      int: 0
+      action: set
   mode_superpops_started:
     characters_collected: 1
     mmm_collected: 1
+    superpops_active:
+      int: 1
+      action: set
+  mode_superpops_stopped:
+    superpops_active:
+      int: 0
+      action: set
   mode_supercombos_started:
     characters_collected: 1
     djhurr_collected: 1
+    supercombos_active:
+      int: 1
+      action: set
+  mode_supercombos_stopped:
+    supercombos_active:
+      int: 0
+      action: set
   achievement_wizard1_state_enabled:
     chcheckitout_multiball_blocking_flag:
       int: 1
@@ -2463,7 +2725,7 @@ random_event_player:
       - play_base_video6
     force_all: False
     force_different: False
-  left_outlane_hit{device.ball_saves.default.state=="disabled" and device.ball_saves.mode_start.state=="disabled" and device.ball_saves.instrument_collect.state=="disabled" and device.ball_saves.girls_frenzy.state=="disabled" and device.ball_saves.sureshot_ball_saver.state=="disabled" and device.ball_saves.end_mode_ball_save.state=="disabled" and device.ball_saves.fake_bodhisattvavow_ball_save.state=="disabled" and current_player.bodymovin_multiball_blocking_flag==0 and current_player.chcheckitout_multiball_blocking_flag==0 and current_player.chcheckitout_multiball_blocking_flag==0 and current_player.girls_blocking_flag==0}:
+  left_outlane_hit{device.ball_saves.default.state=="disabled" and device.ball_saves.mode_start.state=="disabled" and device.ball_saves.instrument_boombox_collect.state=="disabled" and device.ball_saves.instrument_microphone_collect.state=="disabled" and device.ball_saves.instrument_turntable_collect.state=="disabled" and device.ball_saves.girls_frenzy.state=="disabled" and device.ball_saves.sureshot_ball_saver.state=="disabled" and device.ball_saves.end_mode_ball_save.state=="disabled" and device.ball_saves.fake_bodhisattvavow_ball_save.state=="disabled" and current_player.bodymovin_multiball_blocking_flag==0 and current_player.chcheckitout_multiball_blocking_flag==0 and current_player.chcheckitout_multiball_blocking_flag==0 and current_player.girls_blocking_flag==0}:
     events:
       - outlane_drain_1
       - outlane_drain_2
@@ -2471,7 +2733,7 @@ random_event_player:
       - outlane_drain_4
     force_all: False
     force_different: False
-  right_outlane_hit{device.ball_saves.default.state=="disabled" and device.ball_saves.mode_start.state=="disabled" and device.ball_saves.instrument_collect.state=="disabled" and device.ball_saves.girls_frenzy.state=="disabled" and device.ball_saves.sureshot_ball_saver.state=="disabled" and device.ball_saves.end_mode_ball_save.state=="disabled" and device.ball_saves.fake_bodhisattvavow_ball_save.state=="disabled" and current_player.bodymovin_multiball_blocking_flag==0 and current_player.chcheckitout_multiball_blocking_flag==0 and current_player.chcheckitout_multiball_blocking_flag==0 and current_player.girls_blocking_flag==0}:
+  right_outlane_hit{device.ball_saves.default.state=="disabled" and device.ball_saves.mode_start.state=="disabled" and device.ball_saves.instrument_boombox_collect.state=="disabled" and device.ball_saves.instrument_microphone_collect.state=="disabled" and device.ball_saves.instrument_turntable_collect.state=="disabled" and device.ball_saves.girls_frenzy.state=="disabled" and device.ball_saves.sureshot_ball_saver.state=="disabled" and device.ball_saves.end_mode_ball_save.state=="disabled" and device.ball_saves.fake_bodhisattvavow_ball_save.state=="disabled" and current_player.bodymovin_multiball_blocking_flag==0 and current_player.chcheckitout_multiball_blocking_flag==0 and current_player.chcheckitout_multiball_blocking_flag==0 and current_player.girls_blocking_flag==0}:
     events:
       - outlane_drain_1
       - outlane_drain_2
@@ -2510,12 +2772,18 @@ random_event_player:
       - mystery_award_add_tilt_warning{current_player.tilt_warnings>0 and settings.tournament_mode_enabled==0}
     force_all: False
     force_different: False
-  game_started:
+  set_match_number:
     events:
       match_end_game_1: 88
       match_end_game_2: 6
       match_end_game_3: 3
       match_end_game_4: 3
+    force_all: False
+    force_different: False
+  set_player_add_callouts:
+    events:
+      player_callouts_1: 65
+      player_callouts_2: 35
     force_all: False
     force_different: False
 
@@ -2957,19 +3225,53 @@ show_player:
   ball_save_default_disabled:
     ball_save_show:
       action: stop
-  ball_save_instrument_collect_timer_start:
+  ball_save_instrument_boombox_collect_timer_start:
     ball_save_show:
       action: play
       loops: -1
       priority: 2000
-  ball_save_instrument_collect_hurry_up:
+  ball_save_instrument_boombox_collect_hurry_up:
     ball_save_show:
       action: stop
     ball_save_hurryup_show:
       action: play
       loops: -1
       priority: 2000
-  ball_save_instrument_collect_grace_period:
+  ball_save_instrument_boombox_collect_grace_period:
+    ball_save_hurryup_show:
+      action: stop
+    ball_save_show:
+      action: stop
+  ball_save_instrument_microphone_collect_timer_start:
+    ball_save_show:
+      action: play
+      loops: -1
+      priority: 2000
+  ball_save_instrument_microphone_collect_hurry_up:
+    ball_save_show:
+      action: stop
+    ball_save_hurryup_show:
+      action: play
+      loops: -1
+      priority: 2000
+  ball_save_instrument_microphone_collect_grace_period:
+    ball_save_hurryup_show:
+      action: stop
+    ball_save_show:
+      action: stop
+  ball_save_instrument_turntable_collect_timer_start:
+    ball_save_show:
+      action: play
+      loops: -1
+      priority: 2000
+  ball_save_instrument_turntable_collect_hurry_up:
+    ball_save_show:
+      action: stop
+    ball_save_hurryup_show:
+      action: play
+      loops: -1
+      priority: 2000
+  ball_save_instrument_turntable_collect_grace_period:
     ball_save_hurryup_show:
       action: stop
     ball_save_show:
@@ -3506,10 +3808,13 @@ blinkenlight_player:
     bl_rightorbit_arrow_led: remove
   achievement_wizard1_state_enabled:
     bl_captiveball_smallcircle_led: remove
+    bl_scoop_arrow_led: remove
   achievement_wizard2_state_enabled:
     bl_captiveball_smallcircle_led: remove
+    bl_scoop_arrow_led: remove
   achievement_wizard3_state_enabled:
     bl_captiveball_smallcircle_led: remove
+    bl_scoop_arrow_led: remove
   mode_chcheckitout_started:
     bl_captiveball_smallcircle_led: remove
     bl_scoop_arrow_led: remove
@@ -4087,6 +4392,16 @@ timers:
         action: pause
       - event: s_right_slingshot_active
         action: pause
+  drop_target_backup_reset_timer:
+    start_value: 0
+    end_value: 6
+    tick_interval: 1s
+    start_running: False
+    control_events:
+      - event: drop_target_bank_three_bank_down
+        action: restart
+      - event: drop_target_bank_three_bank_up
+        action: stop
 
 
 achievements:
@@ -4330,9 +4645,14 @@ event_player:
   mode_base_started{current_player.number==3 and is_extra_ball==True}: p3_extra_ball_starting
   mode_base_started{current_player.number==4 and is_extra_ball==True}: p4_extra_ball_starting
   timer_ball_waiting_autoplunge_timer_complete: autoplunge_ball_now
-  player_added{num==2}: player2_start_sound_play
-  player_added{num==3}: player3_start_sound_play
-  player_added{num==4}: player4_start_sound_play
+  timer_drop_target_backup_reset_timer_complete: reset_drop_bank
+  game_started: set_match_number, set_player_add_callouts
+  player_added{num==2 and machine.this_game_player_callouts==1}: player2_start_sound_play
+  player_added{num==3 and machine.this_game_player_callouts==1}: player3_start_sound_play
+  player_added{num==4 and machine.this_game_player_callouts==1}: player4_start_sound_play
+  player_added{num==2 and machine.this_game_player_callouts==2}: player2_start_sound_play_brooklyn
+  player_added{num==3 and machine.this_game_player_callouts==2}: player3_start_sound_play_brooklyn
+  player_added{num==4 and machine.this_game_player_callouts==2}: player4_start_sound_play_brooklyn
   inner_loop_hit{current_player.loop_shot_multiplier==1}: hit_likethis
   inner_loop_hit{current_player.loop_shot_multiplier==2}: hit_likethat
   inner_loop_hit{current_player.loop_shot_multiplier==3}: hit_wifflebat

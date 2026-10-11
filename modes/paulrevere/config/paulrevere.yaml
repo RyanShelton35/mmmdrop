@@ -89,6 +89,12 @@ variable_player:
     mode_blocking_flag:
       int: 1
       action: set
+    active_mode:
+      string: "Paul Revere"
+      action: set
+    active_mode_objective:
+      string: "Shoot Lit Shots Left to Right, Finish at Scoop"
+      action: set
   timer_paulrevere_time_remaining_tick:
     paulrevere_time_remaining_variable_times_1:
       int: device.timers.paulrevere_time_remaining.ticks * 1
@@ -424,6 +430,10 @@ show_player:
     paulrevere_final_shot:
       action: play
       loops: -1
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
   mode_paulrevere_started:
     paulrevere_backboard_show:
       action: play
@@ -441,6 +451,31 @@ show_player:
   timer_paulrevere_intro_show_complete:
     paulrevere_stadium_intro_lights:
       action: stop
+  paulrevere_shot_1_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  paulrevere_shot_2_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  paulrevere_shot_3_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  paulrevere_shot_4_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  paulrevere_shot_6_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
 
 
 blinkenlight_player:

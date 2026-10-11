@@ -740,6 +740,16 @@ lights:
     subtype: led
     type: rgb
     label: "Right Orbit X"
+  l_start_button:
+    number: c_start_light_driver
+    platform: drivers
+    type: w
+    label: "Start Button"
+  l_coin_door:
+    number: c_coin_light_driver
+    platform: drivers
+    type: w
+    label: "Coin Door Lights"
 
 
 blinkenlights:

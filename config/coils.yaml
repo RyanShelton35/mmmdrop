@@ -49,6 +49,7 @@ coils:
   c_three_bank:
     number: 0804-3
     default_pulse_ms: 23
+    pulse_events: reset_drop_bank
     label: "Drop Target Reset"
   c_left_upper_pop:
     number: 0804b-0
@@ -68,6 +69,20 @@ coils:
     label: "Up Post"
     default_pulse_power: 0.9
     default_hold_power: 0.8
+  c_start_light_driver:
+    number: cab-2 #L2
+    allow_enable: True
+    enable_events: enable_always_on_drivers
+    default_pulse_power: 1.0
+    default_hold_power: 1.0
+    label: "Start Light Driver"
+  c_coin_light_driver:
+    number: cab-0 #L0
+    allow_enable: True
+    enable_events: enable_always_on_drivers
+    default_pulse_power: 1.0
+    default_hold_power: 1.0
+    label: "Coin Door Light Driver"
 
 
 autofire_coils:

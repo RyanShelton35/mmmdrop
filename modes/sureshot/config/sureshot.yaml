@@ -250,6 +250,12 @@ variable_player:
     wizard_blocking_flag:
       int: 1
       action: set
+    active_mode:
+      string: "Sure Shot"
+      action: set
+    active_mode_objective:
+      string: "Shoot Purple Blinking Shots and Targets"
+      action: set
     mode_sureshot_score:
       int: 0
       action: set

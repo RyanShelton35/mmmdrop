@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://d0dq27ufb7wp0"]
+
+[ext_resource type="AudioStream" uid="uid://dfrn8h603ykci" path="res://modes/jukebox/sounds/licensedtoill8.ogg" id="1_75b1j"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_75b1j")

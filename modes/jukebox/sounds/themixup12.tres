@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://dsroxa87m7p0c"]
+
+[ext_resource type="AudioStream" uid="uid://ciahemqglj8pl" path="res://modes/jukebox/sounds/themixup12.ogg" id="1_nevj1"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_nevj1")

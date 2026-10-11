@@ -1,0 +1,1303 @@
+#config_version=6
+
+mode:
+  start_events: start_jukebox
+  stop_events: end_jukebox
+  game_mode: False
+  code: mpf.modes.carousel.code.carousel.Carousel
+  priority: 2000
+
+
+mode_settings:
+  selectable_items:
+    - licensedtoill1
+    - licensedtoill2
+    - licensedtoill3
+    - licensedtoill4
+    - licensedtoill5
+    - licensedtoill6
+    - licensedtoill7
+    - licensedtoill8
+    - licensedtoill9
+    - licensedtoill10
+    - licensedtoill11
+    - licensedtoill12
+    - licensedtoill13
+    - paulsboutique1
+    - paulsboutique2
+    - paulsboutique3
+    - paulsboutique4
+    - paulsboutique5
+    - paulsboutique6
+    - paulsboutique7
+    - paulsboutique8
+    - paulsboutique9
+    - paulsboutique10
+    - paulsboutique11
+    - paulsboutique12
+    - paulsboutique13
+    - paulsboutique14
+    - paulsboutique15
+#    - checkyourhead1
+#    - checkyourhead2
+#    - checkyourhead3
+#    - checkyourhead4
+#    - checkyourhead5
+#    - checkyourhead6
+#    - checkyourhead7
+#    - checkyourhead8
+#    - checkyourhead9
+#    - checkyourhead10
+#    - checkyourhead11
+#    - checkyourhead12
+#    - checkyourhead13
+#    - checkyourhead14
+#    - checkyourhead15
+#    - checkyourhead16
+#    - checkyourhead17
+#    - checkyourhead18
+#    - checkyourhead19
+#    - checkyourhead20
+#    - illcommunication1
+#    - illcommunication2
+#    - illcommunication3
+#    - illcommunication4
+#    - illcommunication5
+#    - illcommunication6
+#    - illcommunication7
+#    - illcommunication8
+#    - illcommunication9
+#    - illcommunication10
+#    - illcommunication11
+#    - illcommunication12
+#    - illcommunication13
+#    - illcommunication14
+#    - illcommunication15
+#    - illcommunication16
+#    - illcommunication17
+#    - illcommunication18
+#    - illcommunication19
+#    - illcommunication20
+#    - hellonasty1
+#    - hellonasty2
+#    - hellonasty3
+#    - hellonasty4
+#    - hellonasty5
+#    - hellonasty6
+#    - hellonasty7
+#    - hellonasty8
+#    - hellonasty9
+#    - hellonasty10
+#    - hellonasty11
+#    - hellonasty12
+#    - hellonasty13
+#    - hellonasty14
+#    - hellonasty15
+#    - hellonasty16
+#    - hellonasty17
+#    - hellonasty18
+#    - hellonasty19
+#    - hellonasty20
+#    - hellonasty21
+#    - hellonasty22
+#    - tothe5boroughs1
+#    - tothe5boroughs2
+#    - tothe5boroughs3
+#    - tothe5boroughs4
+#    - tothe5boroughs5
+#    - tothe5boroughs6
+#    - tothe5boroughs7
+#    - tothe5boroughs8
+#    - tothe5boroughs9
+#    - tothe5boroughs10
+#    - tothe5boroughs11
+#    - tothe5boroughs12
+#    - tothe5boroughs13
+#    - tothe5boroughs14
+#    - tothe5boroughs15
+#    - themixup1
+#    - themixup2
+#    - themixup3
+#    - themixup4
+#    - themixup5
+#    - themixup6
+#    - themixup7
+#    - themixup8
+#    - themixup9
+#    - themixup10
+#    - themixup11
+#    - themixup12
+#    - hotsaucecommitteeparttwo1
+#    - hotsaucecommitteeparttwo2
+#    - hotsaucecommitteeparttwo3
+#    - hotsaucecommitteeparttwo4
+#    - hotsaucecommitteeparttwo5
+#    - hotsaucecommitteeparttwo6
+#    - hotsaucecommitteeparttwo7
+#    - hotsaucecommitteeparttwo8
+#    - hotsaucecommitteeparttwo9
+#    - hotsaucecommitteeparttwo10
+#    - hotsaucecommitteeparttwo11
+#    - hotsaucecommitteeparttwo12
+#    - hotsaucecommitteeparttwo13
+#    - hotsaucecommitteeparttwo14
+#    - hotsaucecommitteeparttwo15
+#    - hotsaucecommitteeparttwo16
+  next_item_events: s_right_flipper_active, jukebox_carousel_advance
+  previous_item_events: s_left_flipper_active
+
+
+timers:
+  end_jukebox_timer:
+    start_value: 0
+    end_value: 2
+    tick_interval: 1s
+    start_running: False
+    restart_on_complete: False
+    control_events:
+      - event: flipper_cradle
+        action: restart
+      - event: flipper_cradle_release{device.timers.end_jukebox_timer.running==True}
+        action: stop
+
+
+#not allowed to have random event player in non-game mode
+#random_event_player:
+#  mode_jukebox_started:
+#    events:
+#      random_album_picker_licensedtoill: 13
+#      random_album_picker_paulsboutique: 12
+#      random_album_picker_checkyourhead: 12
+#      random_album_picker_illcommunication: 13
+#      random_album_picker_hellonasty: 13
+#      random_album_picker_tothe5boroughs: 13
+#      random_album_picker_themixup: 12
+#      random_album_picker_hotsaucecommitteeparttwo: 12
+#    force_all: False
+#    force_different: False
+
+
+#event_player:
+#  random_album_picker_paulsboutique: jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance
+#  random_album_picker_checkyourhead: jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance
+#  random_album_picker_illcommunication: jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance
+#  random_album_picker_hellonasty: jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance
+#  random_album_picker_tothe5boroughs: jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance
+#  random_album_picker_themixup: jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance
+#  random_album_picker_hotsaucecommitteeparttwo: jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance, jukebox_carousel_advance
+
+
+slide_player:
+  mode_jukebox_started:
+    jukebox_bg:
+      action: play
+      priority: 500000
+    gamemodeselect:
+      action: remove
+    loading:
+      action: remove
+    attract:
+      action: remove
+    ghostbusters:
+      action: remove
+    friends:
+      action: remove
+    attract_load:
+      action: remove
+#    jukebox:
+#      action: play
+#      priority: 501000
+
+
+sound_player:
+  mode_jukebox_started:
+    attract_crowd:
+      bus: effects
+      action: stop
+    postgame_instrumental_random:
+      action: stop
+      bus: music
+    friendsmusic:
+      action: stop
+      bus: music
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill1"}:
+    licensedtoill1:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill1"}:
+    licensedtoill1:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill2"}:
+    licensedtoill2:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill2"}:
+    licensedtoill2:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill3"}:
+    licensedtoill3:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill3"}:
+    licensedtoill3:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill4"}:
+    licensedtoill4:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill4"}:
+    licensedtoill4:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill5"}:
+    licensedtoill5:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill5"}:
+    licensedtoill5:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill6"}:
+    licensedtoill6:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill6"}:
+    licensedtoill6:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill7"}:
+    licensedtoill7:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill7"}:
+    licensedtoill7:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill8"}:
+    licensedtoill8:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill8"}:
+    licensedtoill8:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill9"}:
+    licensedtoill9:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill9"}:
+    licensedtoill9:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill10"}:
+    licensedtoill10:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill10"}:
+    licensedtoill10:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill11"}:
+    licensedtoill11:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill11"}:
+    licensedtoill11:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill12"}:
+    licensedtoill12:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill12"}:
+    licensedtoill12:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="licensedtoill13"}:
+    licensedtoill13:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="licensedtoill13"}:
+    licensedtoill13:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique1"}:
+    paulsboutique1:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique1"}:
+    paulsboutique1:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique2"}:
+    paulsboutique2:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique2"}:
+    paulsboutique2:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique3"}:
+    paulsboutique3:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique3"}:
+    paulsboutique3:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique4"}:
+    paulsboutique4:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique4"}:
+    paulsboutique4:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique5"}:
+    paulsboutique5:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique5"}:
+    paulsboutique5:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique6"}:
+    paulsboutique6:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique6"}:
+    paulsboutique6:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique7"}:
+    paulsboutique7:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique7"}:
+    paulsboutique7:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique8"}:
+    paulsboutique8:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique8"}:
+    paulsboutique8:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique9"}:
+    paulsboutique9:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique9"}:
+    paulsboutique9:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique10"}:
+    paulsboutique10:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique10"}:
+    paulsboutique10:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique11"}:
+    paulsboutique11:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique11"}:
+    paulsboutique11:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique12"}:
+    paulsboutique12:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique12"}:
+    paulsboutique12:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique13"}:
+    paulsboutique13:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique13"}:
+    paulsboutique13:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique14"}:
+    paulsboutique14:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique14"}:
+    paulsboutique14:
+      action: stop
+  carousel_item_highlighted{carousel=="jukebox" and item=="paulsboutique15"}:
+    paulsboutique15:
+      action: load
+      bus: music
+      loops: 0
+  carousel_item_highlighted{carousel=="jukebox" and item!="paulsboutique15"}:
+    paulsboutique15:
+      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead1"}:
+#    checkyourhead1:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead1"}:
+#    checkyourhead1:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead2"}:
+#    checkyourhead2:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead2"}:
+#    checkyourhead2:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead3"}:
+#    checkyourhead3:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead3"}:
+#    checkyourhead3:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead4"}:
+#    checkyourhead4:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead4"}:
+#    checkyourhead4:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead5"}:
+#    checkyourhead5:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead5"}:
+#    checkyourhead5:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead6"}:
+#    checkyourhead6:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead6"}:
+#    checkyourhead6:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead7"}:
+#    checkyourhead7:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead7"}:
+#    checkyourhead7:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead8"}:
+#    checkyourhead8:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead8"}:
+#    checkyourhead8:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead9"}:
+#    checkyourhead9:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead9"}:
+#    checkyourhead9:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead10"}:
+#    checkyourhead10:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead10"}:
+#    checkyourhead10:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead11"}:
+#    checkyourhead11:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead11"}:
+#    checkyourhead11:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead12"}:
+#    checkyourhead12:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead12"}:
+#    checkyourhead12:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead13"}:
+#    checkyourhead13:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead13"}:
+#    checkyourhead13:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead14"}:
+#    checkyourhead14:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead14"}:
+#    checkyourhead14:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead15"}:
+#    checkyourhead15:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead15"}:
+#    checkyourhead15:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead16"}:
+#    checkyourhead16:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead16"}:
+#    checkyourhead16:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead17"}:
+#    checkyourhead17:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead17"}:
+#    checkyourhead17:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead18"}:
+#    checkyourhead18:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead18"}:
+#    checkyourhead18:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead19"}:
+#    checkyourhead19:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead19"}:
+#    checkyourhead19:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="checkyourhead20"}:
+#    checkyourhead20:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="checkyourhead20"}:
+#    checkyourhead20:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication1"}:
+#    illcommunication1:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication1"}:
+#    illcommunication1:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication2"}:
+#    illcommunication2:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication2"}:
+#    illcommunication2:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication3"}:
+#    illcommunication3:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication3"}:
+#    illcommunication3:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication4"}:
+#    illcommunication4:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication4"}:
+#    illcommunication4:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication5"}:
+#    illcommunication5:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication5"}:
+#    illcommunication5:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication6"}:
+#    illcommunication6:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication6"}:
+#    illcommunication6:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication7"}:
+#    illcommunication7:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication7"}:
+#    illcommunication7:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication8"}:
+#    illcommunication8:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication8"}:
+#    illcommunication8:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication9"}:
+#    illcommunication9:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication9"}:
+#    illcommunication9:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication10"}:
+#    illcommunication10:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication10"}:
+#    illcommunication10:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication11"}:
+#    illcommunication11:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication11"}:
+#    illcommunication11:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication12"}:
+#    illcommunication12:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication12"}:
+#    illcommunication12:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication13"}:
+#    illcommunication13:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication13"}:
+#    illcommunication13:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication14"}:
+#    illcommunication14:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication14"}:
+#    illcommunication14:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication15"}:
+#    illcommunication15:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication15"}:
+#    illcommunication15:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication16"}:
+#    illcommunication16:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication16"}:
+#    illcommunication16:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication17"}:
+#    illcommunication17:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication17"}:
+#    illcommunication17:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication18"}:
+#    illcommunication18:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication18"}:
+#    illcommunication18:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication19"}:
+#    illcommunication19:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication19"}:
+#    illcommunication19:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="illcommunication20"}:
+#    illcommunication20:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="illcommunication20"}:
+#    illcommunication20:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty1"}:
+#    hellonasty1:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty1"}:
+#    hellonasty1:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty2"}:
+#    hellonasty2:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty2"}:
+#    hellonasty2:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty3"}:
+#    hellonasty3:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty3"}:
+#    hellonasty3:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty4"}:
+#    hellonasty4:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty4"}:
+#    hellonasty4:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty5"}:
+#    hellonasty5:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty5"}:
+#    hellonasty5:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty6"}:
+#    hellonasty6:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty6"}:
+#    hellonasty6:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty7"}:
+#    hellonasty7:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty7"}:
+#    hellonasty7:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty8"}:
+#    hellonasty8:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty8"}:
+#    hellonasty8:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty9"}:
+#    hellonasty9:
+#      action: load
+##      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty9"}:
+#    hellonasty9:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty10"}:
+#    hellonasty10:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty10"}:
+#    hellonasty10:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty11"}:
+#    hellonasty11:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty11"}:
+#    hellonasty11:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty12"}:
+#    hellonasty12:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty12"}:
+#    hellonasty12:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty13"}:
+#    hellonasty13:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty13"}:
+#    hellonasty13:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty14"}:
+#    hellonasty14:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty14"}:
+#    hellonasty14:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty15"}:
+#    hellonasty15:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty15"}:
+#    hellonasty15:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty16"}:
+#    hellonasty16:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty16"}:
+#    hellonasty16:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty17"}:
+#    hellonasty17:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty17"}:
+#    hellonasty17:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty18"}:
+#    hellonasty18:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty18"}:
+#    hellonasty18:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty19"}:
+#    hellonasty19:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty19"}:
+#    hellonasty19:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty20"}:
+#    hellonasty20:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty20"}:
+#    hellonasty20:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty21"}:
+#    hellonasty21:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty21"}:
+#    hellonasty21:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hellonasty22"}:
+#    hellonasty22:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hellonasty22"}:
+#    hellonasty22:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs1"}:
+#    tothe5boroughs1:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs1"}:
+#    tothe5boroughs1:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs2"}:
+#    tothe5boroughs2:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs2"}:
+#    tothe5boroughs2:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs3"}:
+#    tothe5boroughs3:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs3"}:
+#    tothe5boroughs3:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs4"}:
+#    tothe5boroughs4:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs4"}:
+#    tothe5boroughs4:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs5"}:
+#    tothe5boroughs5:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs5"}:
+#    tothe5boroughs5:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs6"}:
+#    tothe5boroughs6:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs6"}:
+#    tothe5boroughs6:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs7"}:
+#    tothe5boroughs7:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs7"}:
+#    tothe5boroughs7:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs8"}:
+#    tothe5boroughs8:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs8"}:
+#    tothe5boroughs8:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs9"}:
+#    tothe5boroughs9:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs9"}:
+#    tothe5boroughs9:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs10"}:
+#    tothe5boroughs10:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs10"}:
+#    tothe5boroughs10:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs11"}:
+#    tothe5boroughs11:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs11"}:
+#    tothe5boroughs11:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs12"}:
+#    tothe5boroughs12:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs12"}:
+#    tothe5boroughs12:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs13"}:
+#    tothe5boroughs13:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs13"}:
+#    tothe5boroughs13:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs14"}:
+#    tothe5boroughs14:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs14"}:
+#    tothe5boroughs14:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="tothe5boroughs15"}:
+#    tothe5boroughs15:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="tothe5boroughs15"}:
+#    tothe5boroughs15:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup1"}:
+#    themixup1:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup1"}:
+#    themixup1:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup2"}:
+#    themixup2:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup2"}:
+#    themixup2:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup3"}:
+#    themixup3:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup3"}:
+#    themixup3:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup4"}:
+#    themixup4:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup4"}:
+#    themixup4:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup5"}:
+#    themixup5:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup5"}:
+#    themixup5:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup6"}:
+#    themixup6:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup6"}:
+#    themixup6:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup7"}:
+#    themixup7:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup7"}:
+#    themixup7:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup8"}:
+#    themixup8:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup8"}:
+#    themixup8:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup9"}:
+#    themixup9:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup9"}:
+#    themixup9:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup10"}:
+#    themixup10:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup10"}:
+#    themixup10:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup11"}:
+#    themixup11:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup11"}:
+#    themixup11:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="themixup12"}:
+#    themixup12:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="themixup12"}:
+#    themixup12:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo1"}:
+#    hotsaucecommitteeparttwo1:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo1"}:
+#    hotsaucecommitteeparttwo1:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo2"}:
+#    hotsaucecommitteeparttwo2:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo2"}:
+#    hotsaucecommitteeparttwo2:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo3"}:
+#    hotsaucecommitteeparttwo3:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo3"}:
+#    hotsaucecommitteeparttwo3:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo4"}:
+#    hotsaucecommitteeparttwo4:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo4"}:
+#    hotsaucecommitteeparttwo4:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo5"}:
+#    hotsaucecommitteeparttwo5:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo5"}:
+#    hotsaucecommitteeparttwo5:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo6"}:
+#    hotsaucecommitteeparttwo6:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo6"}:
+#    hotsaucecommitteeparttwo6:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo7"}:
+#    hotsaucecommitteeparttwo7:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo7"}:
+#    hotsaucecommitteeparttwo7:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo8"}:
+#    hotsaucecommitteeparttwo8:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo8"}:
+#    hotsaucecommitteeparttwo8:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo9"}:
+#    hotsaucecommitteeparttwo9:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo9"}:
+#    hotsaucecommitteeparttwo9:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo10"}:
+#    hotsaucecommitteeparttwo10:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo10"}:
+#    hotsaucecommitteeparttwo10:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo11"}:
+#    hotsaucecommitteeparttwo11:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo11"}:
+#    hotsaucecommitteeparttwo11:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo12"}:
+#    hotsaucecommitteeparttwo12:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo12"}:
+#    hotsaucecommitteeparttwo12:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo13"}:
+#    hotsaucecommitteeparttwo13:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo13"}:
+#    hotsaucecommitteeparttwo13:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo14"}:
+#    hotsaucecommitteeparttwo14:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo14"}:
+#    hotsaucecommitteeparttwo14:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo15"}:
+#    hotsaucecommitteeparttwo15:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo15"}:
+#    hotsaucecommitteeparttwo15:
+#      action: stop
+#  carousel_item_highlighted{carousel=="jukebox" and item=="hotsaucecommitteeparttwo16"}:
+#    hotsaucecommitteeparttwo16:
+#      action: load
+#      bus: music
+#      loops: 0
+#  carousel_item_highlighted{carousel=="jukebox" and item!="hotsaucecommitteeparttwo16"}:
+#    hotsaucecommitteeparttwo16:
+#      action: stop
+
+
+show_player:
+  mode_jukebox_started:
+    attract_light_show_new:
+      action: play
+      priority: 1000
+      loops: -1
+    christmas_lights:
+      action: stop
+    friends_lights:
+      action: stop
+    ghostbusters_lights:
+      action: stop
+    muppets_lights:
+      action: stop
+

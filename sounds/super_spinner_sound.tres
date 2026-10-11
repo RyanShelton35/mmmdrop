@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://bdcet0lmthrsc"]
+
+[ext_resource type="AudioStream" uid="uid://dnhhr6dtc1x3x" path="res://sounds/superspinsound.ogg" id="1_xpy01"]
+
+[resource]
+playback_mode = 2
+streams_count = 1
+stream_0/stream = ExtResource("1_xpy01")

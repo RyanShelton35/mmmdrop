@@ -37,4 +37,12 @@ mode_settings:
     - highscoremodes7
   next_item_events: s_right_flipper_active, timer_attract_carousel_timer_complete
   previous_item_events: s_left_flipper_active
+  disable_events: mode_gamemodeselectcarousel_started
+  enable_events: restart_attract
+  select_item_events: thiseventwillneverbepostedbutisnecessary
 
+#event_player:
+#  timer_end_jukebox_timer_complete: restart_attract, end_jukebox
+#  timer_select_game_type_timer_complete: show_mode_select_widget
+#  carousel_item_selected{carousel=="gamemodeselectcarousel" and item=="normal"}: restart_attract
+#  carousel_item_selected{carousel=="gamemodeselectcarousel" and item=="jukebox"}: start_jukebox

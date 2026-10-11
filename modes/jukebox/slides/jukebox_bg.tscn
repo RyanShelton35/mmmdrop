@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtgjjo6oxifil"]
+
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_xiqh3"]
+[ext_resource type="VideoStream" uid="uid://c0q3u5kb15na0" path="res://modes/jukebox/slides/bodhivowvisualizerMV2.ogv" id="2_7ovue"]
+[ext_resource type="Script" uid="uid://bov7mrgxslshq" path="res://addons/mpf-gmc/classes/mpf_video_player.gd" id="3_cjpjb"]
+
+[node name="jukebox_bg" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xiqh3")
+
+[node name="MPFVideoPlayer" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("2_7ovue")
+autoplay = true
+expand = true
+loop = true
+script = ExtResource("3_cjpjb")
+hide_behavior = 1
+preview_in_editor = true

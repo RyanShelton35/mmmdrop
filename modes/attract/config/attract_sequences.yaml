@@ -1,32 +1,28 @@
 #config_version=6
 
 sequences:
-  mca_sequence:
+  muppets_sequence:
     events:
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_left_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_right_flipper_active
-    - s_left_flipper_active
-    - s_right_flipper_active
-    - s_left_flipper_active
-    disable_events: game_starting
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_right_flipper_active
+      - s_left_flipper_active
+    disable_events: game_starting, mode_gamemodeselectcarousel_started
+    enable_events: restart_attract
+    start_enabled: True
     reset_on_complete: True
-    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel, christmas_sequence_hit, muppets_sequence_hit
-    events_when_complete: mca_sequence_hit
+    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel{device.timers.muppets_attract_video_timer.running==True or device.sequences.muppets_sequence.enabled==True}, christmas_sequence_hit, muppets_sequence_hit
+    events_when_complete: muppets_sequence_hit
   adr_sequence:
     events:
     - s_right_flipper_active
@@ -55,9 +51,11 @@ sequences:
     - s_right_flipper_active
     - s_right_flipper_active
     - s_left_flipper_active
-    disable_events: game_starting
+    disable_events: game_starting, mode_gamemodeselectcarousel_started
+    enable_events: restart_attract
+    start_enabled: True
     reset_on_complete: True
-    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel, christmas_sequence_hit, muppets_sequence_hit
+    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel{device.timers.adr_attract_video_timer.running==True or device.sequences.adr_sequence.enabled==True}, christmas_sequence_hit, muppets_sequence_hit
     events_when_complete: adr_sequence_hit
   christmas_sequence:
     events:
@@ -75,29 +73,39 @@ sequences:
       - s_right_flipper_active
       - s_right_flipper_active
       - s_left_flipper_active
-    disable_events: game_starting
+    disable_events: game_starting, mode_gamemodeselectcarousel_started
+    enable_events: restart_attract
+    start_enabled: True
     reset_on_complete: True
-    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel, christmas_sequence_hit, muppets_sequence_hit
+    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel{device.timers.christmas_attract_video_timer.running==True or device.sequences.christmas_sequence.enabled==True}, christmas_sequence_hit, muppets_sequence_hit
     events_when_complete: christmas_sequence_hit
-  muppets_sequence:
+  mca_sequence:
     events:
-      - s_right_flipper_active
-      - s_right_flipper_active
-      - s_right_flipper_active
-      - s_left_flipper_active
-      - s_right_flipper_active
-      - s_left_flipper_active
-      - s_right_flipper_active
-      - s_right_flipper_active
-      - s_right_flipper_active
-      - s_right_flipper_active
-      - s_right_flipper_active
-      - s_right_flipper_active
-      - s_right_flipper_active
-      - s_left_flipper_active
-    disable_events: game_starting
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_left_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_right_flipper_active
+    - s_left_flipper_active
+    - s_right_flipper_active
+    - s_left_flipper_active
+    disable_events: game_starting, mode_gamemodeselectcarousel_started
+    enable_events: restart_attract
+    start_enabled: True
     reset_on_complete: True
-    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, flipper_cancel, christmas_sequence_hit, muppets_sequence_hit
-    events_when_complete: muppets_sequence_hit
+    restart_events: mode_attract_started, adr_sequence_hit, mca_sequence_hit, christmas_sequence_hit, muppets_sequence_hit, flipper_cancel{device.timers.mca_attract_video_timer.running==True or device.sequences.mca_sequence.enabled==True}
+    events_when_complete: mca_sequence_hit
 
     

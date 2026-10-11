@@ -42,7 +42,7 @@ counters:
   makesomenoise_drops_counter:
     count_events: drop_target_middle_down, drop_target_bottom_down, drop_target_top_down
     events_when_complete: makesomenoise_drops_counter_complete
-    starting_count: 6
+    starting_count: 4
     count_complete_value: 0
     count_interval: 1
     direction: down
@@ -54,7 +54,7 @@ counters:
     control_events:
       - event: reset_makesomenoise_drops_counter
         action: jump
-        value: 6
+        value: 4
   makesomenoise_pops_counter:
     count_events: pop1_hit, pop2_hit, pop3_hit
     events_when_complete: makesomenoise_pops_counter_complete
@@ -71,6 +71,18 @@ counters:
       - event: reset_makesomenoise_pops_counter
         action: jump
         value: 10
+  makesomenoise_captiveball_addaball:
+    count_events: captive_ball_hit
+    events_when_complete: makesomenoise_addaball
+    starting_count: 0
+    count_complete_value: 3
+    count_interval: 1
+    direction: up
+    persist_state: False
+    disable_on_complete: False
+    reset_on_complete: True
+    disable_events: mode_makesomenoise_ended
+    restart_events: mode_makesomenoise_started, makesomenoise_addaball
 
 
 accruals:
@@ -87,30 +99,30 @@ accruals:
 sequences:
   makesomenoise_final_shot:
     events:
-      - scoop_hit
+      - inner_loop_hit
     enable_events: makesomenoise_final_shot_lit
     events_when_complete: makesomenoise_final_shot_hit
-    reset_on_complete: True
+    reset_on_complete: False
     start_enabled: False
     restart_events: makesomenoise_final_shot_lit
 
 
 variable_player:
   makesomenoise_drops_counter_complete:
-    score: 10000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
-    mode_makesomenoise_score: 10000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+    score: 2000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.makesomenoise_wave
+    mode_makesomenoise_score: 2000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.makesomenoise_wave
   makesomenoise_pops_counter_complete:
-    score: 10000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
-    mode_makesomenoise_score: 10000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+    score: 2000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.makesomenoise_wave
+    mode_makesomenoise_score: 2000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.makesomenoise_wave
   makesomenoise_ramps_counter_complete:
-    score: 10000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
-    mode_makesomenoise_score: 10000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+    score: 2000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.makesomenoise_wave
+    mode_makesomenoise_score: 2000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.makesomenoise_wave
   makesomenoise_spins_counter_complete:
-    score: 10000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
-    mode_makesomenoise_score: 10000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+    score: 2000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.makesomenoise_wave
+    mode_makesomenoise_score: 2000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.makesomenoise_wave
   makesomenoise_final_shot_hit:
-    score: 20000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.scoop_multiplier
-    mode_makesomenoise_score: 20000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.scoop_multiplier
+    score: 4000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.upper_loop_multiplier * current_player.makesomenoise_wave
+    mode_makesomenoise_score: 4000000 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.upper_loop_multiplier * current_player.makesomenoise_wave
     makesomenoise_pops_remaining:
       int: 10
       action: set
@@ -118,11 +130,12 @@ variable_player:
       int: 40
       action: set
     makesomenoise_drops_remaining:
-      int: 6
+      int: 4
       action: set
     makesomenoise_ramps_remaining:
       int: 4
       action: set
+    makesomenoise_wave: 1
   timer_makesomenoise_intro_show_tick:
     makesomenoise_intro_show_variable_times_100:
       int: device.timers.makesomenoise_intro_show.ticks * 100
@@ -137,6 +150,9 @@ variable_player:
     mode_makesomenoise_score:
       int: 0
       action: set
+    makesomenoise_wave:
+      int: 1
+      action: set
     modes_played: 1
     modes_completed: 1
     battery_charged_yesorno:
@@ -150,10 +166,16 @@ variable_player:
       int: 40
       action: set
     makesomenoise_drops_remaining:
-      int: 6
+      int: 4
       action: set
     makesomenoise_ramps_remaining:
       int: 4
+      action: set
+    active_mode:
+      string: "Make Some Noise"
+      action: set
+    active_mode_objective:
+      string: "Finish Counters on Screen, Super Jackpot at Upper Loop to Increase Multiplier"
       action: set
   logicblock_makesomenoise_spins_counter_hit:
     makesomenoise_spins_remaining:
@@ -253,24 +275,24 @@ variable_player:
     mode_makesomenoise_score: 2220 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
   scoop_hit:
     score: 
-      int: 2310 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.scoop_multiplier
+      int: 1310 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.scoop_multiplier
       block: True
-    mode_makesomenoise_score: 2310 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.scoop_multiplier
+    mode_makesomenoise_score: 1310 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.scoop_multiplier
   tshirt_top_standup_hit:
     score: 
-      int: 5010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+      int: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
       block: True
-    mode_makesomenoise_score: 5010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+    mode_makesomenoise_score: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
   tshirt_bottom_standup_hit:
     score: 
-      int: 5010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+      int: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
       block: True
-    mode_makesomenoise_score: 5010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+    mode_makesomenoise_score: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
   three_bank_standup_hit:
     score: 
-      int: 20010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+      int: 4010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
       block: True
-    mode_makesomenoise_score: 20010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
+    mode_makesomenoise_score: 4010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier
   s_left_orbit_active:
     score: 
       int: 110 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.left_orbit_multiplier
@@ -288,14 +310,14 @@ variable_player:
     mode_makesomenoise_score: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.upper_loop_multiplier
   left_ramp_hit:
     score: 
-      int: 3010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.left_ramp_multiplier
+      int: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.left_ramp_multiplier
       block: True
-    mode_makesomenoise_score: 3010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.left_ramp_multiplier
+    mode_makesomenoise_score: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.left_ramp_multiplier
   right_ramp_hit:
     score: 
-      int: 3010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.right_ramp_multiplier
+      int: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.right_ramp_multiplier
       block: True
-    mode_makesomenoise_score: 3010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.right_ramp_multiplier
+    mode_makesomenoise_score: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.right_ramp_multiplier
   left_orbit_hit:
     score: 
       int: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.left_orbit_multiplier
@@ -308,9 +330,9 @@ variable_player:
     mode_makesomenoise_score: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.right_orbit_multiplier
   inner_loop_hit:
     score: 
-      int: 2010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.upper_loop_multiplier
+      int: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.upper_loop_multiplier
       block: True
-    mode_makesomenoise_score: 2010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.upper_loop_multiplier
+    mode_makesomenoise_score: 1010 * current_player.playfield_x * current_player.makesomenoise_mode_multiplier * current_player.upper_loop_multiplier
 
 
 
@@ -355,6 +377,9 @@ slide_player:
       action: play
       priority: 800000
     makesomenoise_ramps_counter:
+      action: play
+      priority: 800000
+    makesomenoise_damage_wave_counter:
       action: play
       priority: 800000
   makesomenoise_final_shot_lit:
@@ -491,8 +516,13 @@ show_player:
     makesomenoise_final_shot:
       action: play
       loops: -1
+    makesomenoise_right_orbit_uppost_show:
+      action: play
+      loops: -1
   makesomenoise_final_shot_hit:
     makesomenoise_final_shot:
+      action: stop
+    makesomenoise_right_orbit_uppost_show:
       action: stop
     makesomenoise_ramps_shot:
       action: play
@@ -522,4 +552,9 @@ shot_profiles:
           color: DodgerBlue
         speed: 2
     loop: False
+
+
+event_player:
+  s_right_orbit_active{device.diverters.up_post.active==False and device.sequences.makesomenoise_final_shot.enabled==True}: uppost_up
+  inner_loop_hit: uppost_down
 

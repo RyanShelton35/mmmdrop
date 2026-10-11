@@ -160,6 +160,12 @@ variable_player:
     highplainsdrifter_shots_remaining:
       int: 3
       action: set
+    active_mode:
+      string: "High Plains Drifter"
+      action: set
+    active_mode_objective:
+      string: "Hit the Same Shot Twice, Do It Twice to Finish"
+      action: set
   timer_highplainsdrifter_time_remaining_tick:
     highplainsdrifter_time_remaining_variable_times_1:
       int: device.timers.highplainsdrifter_time_remaining.ticks * 1
@@ -458,6 +464,36 @@ show_player:
   timer_highplainsdrifter_intro_show_complete:
     highplainsdrifter_stadium_intro_lights:
       action: stop
+  highplainsdrifter_left_orbit_1_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  highplainsdrifter_left_ramp_1_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  highplainsdrifter_inner_loop_1_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  highplainsdrifter_right_ramp_1_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  highplainsdrifter_right_orbit_1_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  logicblock_highplainsdrifter_shots_counter_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
 
 
 blinkenlight_player:

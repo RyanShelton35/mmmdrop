@@ -1,0 +1,8 @@
+#show_version=6
+
+- duration: 250ms
+  lights:
+    l_start_button: white
+- duration: 250ms
+  lights:
+    l_start_button: off

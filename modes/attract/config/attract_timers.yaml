@@ -6,11 +6,11 @@ timers:
     tick_interval: 1s
     start_running: False
     control_events:
-      - event: carousel_item_highlighted
+      - event: timer_attract_carousel_timer_complete
         action: restart
       - event: flipper_cradle
         action: stop
-      - event: flipper_cradle_release
+      - event: restart_attract
         action: restart
       - event: timer_attract_intro_timer_complete
         action: start
@@ -41,6 +41,8 @@ timers:
         action: restart
       - event: game_started
         action: stop
+      - event: mode_gamemodeselectcarousel_started
+        action: stop
   mca_attract_video_timer:
     end_value: 192
     tick_interval: 1s
@@ -50,7 +52,7 @@ timers:
         action: restart
       - event: game_started
         action: stop
-      - event: flipper_cancel
+      - event: flipper_cancel{device.timers.mca_attract_video_timer.running==True}
         action: jump
         value: 192
       - event: slide_ghostbusters_removed
@@ -67,7 +69,7 @@ timers:
         action: restart
       - event: game_started
         action: stop
-      - event: flipper_cancel
+      - event: flipper_cancel{device.timers.adr_attract_video_timer.running==True}
         action: jump
         value: 49
       - event: slide_friends_removed
@@ -84,7 +86,7 @@ timers:
         action: restart
       - event: game_started
         action: stop
-      - event: flipper_cancel
+      - event: flipper_cancel{device.timers.christmas_attract_video_timer.running==True}
         action: jump
         value: 54
       - event: slide_jinglebells_removed
@@ -101,7 +103,7 @@ timers:
         action: restart
       - event: game_started
         action: stop
-      - event: flipper_cancel
+      - event: flipper_cancel{device.timers.muppets_attract_video_timer.running==True}
         action: jump
         value: 54
       - event: slide_beastiemuppets_removed
@@ -109,3 +111,17 @@ timers:
         value: 0
       - event: slide_beastiemuppets_removed
         action: pause
+#  select_game_type_timer:
+#    start_value: 0
+#    end_value: 3
+#    tick_interval: 1s
+#    start_running: False
+#    restart_on_complete: False
+#    control_events:
+#      - event: flipper_cradle
+#        action: restart
+#      - event: flipper_cradle_release{device.timers.select_game_type_timer.running==True}
+#        action: stop
+#      - event: flipper_cradle_release{device.timers.select_game_type_timer.running==True}
+#        action: jump
+#        value: 0

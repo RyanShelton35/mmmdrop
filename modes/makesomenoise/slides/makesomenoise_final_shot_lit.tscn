@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://7xx4yp70g8gm"]
 
-[ext_resource type="Script" uid="uid://d15ukepy10pan" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_gj6do"]
+[ext_resource type="Script" uid="uid://dru3usokwlhd3" path="res://addons/mpf-gmc/classes/mpf_slide.gd" id="1_gj6do"]
 [ext_resource type="FontFile" uid="uid://b2or65be6mpbg" path="res://fonts/ratcage.TTF" id="2_uxye5"]
 
 [node name="IntergalacticRightShotLit" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_gj6do")
-metadata/_custom_type_script = "uid://d15ukepy10pan"
 
 [node name="shootrightshot" type="Label" parent="."]
 layout_mode = 0
@@ -18,7 +17,7 @@ offset_bottom = 730.0
 theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("2_uxye5")
 theme_override_font_sizes/font_size = 80
-text = "Shoot the Scoop
+text = "Shoot the Upper Loop
 for
 super jackpot!"
 horizontal_alignment = 1

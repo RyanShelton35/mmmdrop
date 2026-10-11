@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cphnrx4g4uy7u"]
+
+[ext_resource type="AudioStream" uid="uid://br1ep0jhprvbx" path="res://sounds/superstandupsound.ogg" id="1_ftoj4"]
+
+[resource]
+playback_mode = 1
+streams_count = 1
+stream_0/stream = ExtResource("1_ftoj4")

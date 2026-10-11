@@ -106,6 +106,12 @@ variable_player:
     mode_blocking_flag:
       int: 1
       action: set
+    active_mode:
+      string: "Intergalactic"
+      action: set
+    active_mode_objective:
+      string: "Alternating Ramps/Orbits, Finish at Lower Pop"
+      action: set
   right_inlane_hit:
     score: 
       int: 110 * current_player.playfield_x
@@ -447,6 +453,10 @@ show_player:
     intergalactic_final_shot:
       action: play
       loops: -1
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
   mode_intergalactic_started:
     intergalactic_intro_lights:
       action: play
@@ -465,6 +475,26 @@ show_player:
     intergalactic_pops_show:
       action: play
       loops: -1
+  intergalactic_shot_1_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  intergalactic_shot_2_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  intergalactic_shot_3_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  intergalactic_shot_5_done:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
 
 
 blinkenlight_player:

@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://bv3dlomh40x4o"]
+
+[ext_resource type="AudioStream" uid="uid://dc5i3tld180uq" path="res://modes/jukebox/sounds/illcommunication9.ogg" id="1_koq3l"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_koq3l")

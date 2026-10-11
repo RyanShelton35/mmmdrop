@@ -86,6 +86,12 @@ variable_player:
     tripletrouble_standups_remaining:
       int: 7
       action: set
+    active_mode:
+      string: "Triple Trouble"
+      action: set
+    active_mode_objective:
+      string: "Hit Standups, Finish at Scoop"
+      action: set
   timer_tripletrouble_time_remaining_tick:
     tripletrouble_time_remaining_variable_times_1:
       int: device.timers.tripletrouble_time_remaining.ticks * 1
@@ -396,6 +402,36 @@ show_player:
     tripletrouble_pops_show:
       action: play
       loops: -1
+  pop_standup_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  upper_pop_standup_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  three_bank_standup_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  s_tshirt_top_standup_active:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  s_tshirt_bottom_standup_active:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
+  captive_ball_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
 
 
 blinkenlight_player:

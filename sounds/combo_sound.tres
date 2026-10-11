@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cr3lv6bcdw14r"]
+
+[ext_resource type="AudioStream" uid="uid://co5xyvtr767eq" path="res://sounds/combosound.ogg" id="1_36pka"]
+
+[resource]
+playback_mode = 1
+streams_count = 1
+stream_0/stream = ExtResource("1_36pka")

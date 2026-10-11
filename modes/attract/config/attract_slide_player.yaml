@@ -13,6 +13,16 @@ slide_player:
     attract:
       action: play
       priority: 10000
+  restart_attract:
+    jukebox:
+      action: remove
+    jukebox_bg:
+      action: remove
+    gamemodeselect:
+      action: remove
+    attract:
+      action: play
+      priority: 10000
   mode_attract_started{machine.game_just_played==1}:
     loading:
       action: remove

@@ -1,0 +1,8 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://cljkqqbhwbjwf"]
+
+[ext_resource type="AudioStream" uid="uid://c2gldop1o6fws" path="res://sounds/superdropsound.ogg" id="1_2hrpu"]
+
+[resource]
+playback_mode = 2
+streams_count = 1
+stream_0/stream = ExtResource("1_2hrpu")

@@ -37,6 +37,12 @@ variable_player:
     threemcsand1dj_scratches_remaining:
       int: 3
       action: set
+    active_mode:
+      string: "3 MCs and 1 DJ"
+      action: set
+    active_mode_objective:
+      string: "Hit 3 Upper Loops, Boost Value with Captive Ball and Pops"
+      action: set
   inner_loop_hit:
     score:
       int: current_player.threemcsand1dj_scratch_value * current_player.threemcsand1dj_mix_multiplier * current_player.playfield_x * current_player.upper_loop_multiplier * current_player.loop_shot_multiplier
@@ -360,6 +366,11 @@ show_player:
     threemcs_right_orbit_uppost_show:
       action: play
       loops: -1
+  inner_loop_hit:
+    mode_shot_hit_lights:
+      action: play
+      priority: 500000
+      loops: 0
 
 
 

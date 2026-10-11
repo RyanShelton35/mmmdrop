@@ -1,0 +1,167 @@
+#show_version=6
+
+- duration: 0.02
+  lights:
+    l_stadium_right_27: green
+    l_stadium_left_27: green
+- duration: 0.02
+  lights:
+    l_stadium_left_27: stop
+    l_stadium_right_27: stop
+    l_stadium_left_26: green
+    l_stadium_right_26: green
+- duration: 0.02
+  lights:
+    l_stadium_left_26: stop
+    l_stadium_right_26: stop
+    l_stadium_left_25: green
+    l_stadium_right_25: green
+- duration: 0.02
+  lights:
+    l_stadium_left_25: stop
+    l_stadium_right_25: stop
+    l_stadium_left_24: green
+    l_stadium_right_24: green
+- duration: 0.02
+  lights:
+    l_stadium_left_24: stop
+    l_stadium_right_24: stop
+    l_stadium_left_23: green
+    l_stadium_right_23: green
+- duration: 0.02
+  lights:
+    l_stadium_left_23: stop
+    l_stadium_right_23: stop
+    l_stadium_left_22: green
+    l_stadium_right_22: green
+- duration: 0.02
+  lights:
+    l_stadium_left_22: stop
+    l_stadium_right_22: stop
+    l_stadium_left_21: green
+    l_stadium_right_21: green
+- duration: 0.02
+  lights:
+    l_stadium_left_21: stop
+    l_stadium_right_21: stop
+    l_stadium_left_20: green
+    l_stadium_right_20: green
+- duration: 0.02
+  lights:
+    l_stadium_left_20: stop
+    l_stadium_right_20: stop
+    l_stadium_left_19: green
+    l_stadium_right_19: green
+- duration: 0.02
+  lights:
+    l_stadium_left_19: stop
+    l_stadium_right_19: stop
+    l_stadium_left_18: green
+    l_stadium_right_18: green
+- duration: 0.02
+  lights:
+    l_stadium_left_18: stop
+    l_stadium_right_18: stop
+    l_stadium_left_17: green
+    l_stadium_right_17: green
+- duration: 0.02
+  lights:
+    l_stadium_left_17: stop
+    l_stadium_right_17: stop
+    l_stadium_left_16: green
+    l_stadium_right_16: green
+- duration: 0.02
+  lights:
+    l_stadium_left_16: stop
+    l_stadium_right_16: stop
+    l_stadium_left_15: green
+    l_stadium_right_15: green
+- duration: 0.02
+  lights:
+    l_stadium_left_15: stop
+    l_stadium_right_15: stop
+    l_stadium_left_14: green
+    l_stadium_right_14: green
+- duration: 0.02
+  lights:
+    l_stadium_left_14: stop
+    l_stadium_right_14: stop
+    l_stadium_left_13: green
+    l_stadium_right_13: green
+- duration: 0.02
+  lights:
+    l_stadium_left_13: stop
+    l_stadium_right_13: stop
+    l_stadium_left_12: green
+    l_stadium_right_12: green
+- duration: 0.02
+  lights:
+    l_stadium_left_12: stop
+    l_stadium_right_12: stop
+    l_stadium_left_11: green
+    l_stadium_right_11: green
+- duration: 0.02
+  lights:
+    l_stadium_left_11: stop
+    l_stadium_right_11: stop
+    l_stadium_left_10: green
+    l_stadium_right_10: green
+- duration: 0.02
+  lights:
+    l_stadium_left_10: stop
+    l_stadium_right_10: stop
+    l_stadium_left_9: green
+    l_stadium_right_9: green
+- duration: 0.02
+  lights:
+    l_stadium_left_9: stop
+    l_stadium_right_9: stop
+    l_stadium_left_8: green
+    l_stadium_right_8: green
+- duration: 0.02
+  lights:
+    l_stadium_left_8: stop
+    l_stadium_right_8: stop
+    l_stadium_left_7: green
+    l_stadium_right_7: green
+- duration: 0.02
+  lights:
+    l_stadium_left_7: stop
+    l_stadium_right_7: stop
+    l_stadium_left_6: green
+    l_stadium_right_6: green
+- duration: 0.02
+  lights:
+    l_stadium_left_6: stop
+    l_stadium_right_6: stop
+    l_stadium_left_5: green
+    l_stadium_right_5: green
+- duration: 0.02
+  lights:
+    l_stadium_left_5: stop
+    l_stadium_right_5: stop
+    l_stadium_left_4: green
+    l_stadium_right_4: green
+- duration: 0.02
+  lights:
+    l_stadium_left_4: stop
+    l_stadium_right_4: stop
+    l_stadium_left_3: green
+    l_stadium_right_3: green
+- duration: 0.02
+  lights:
+    l_stadium_left_3: stop
+    l_stadium_right_3: stop
+    l_stadium_left_2: green
+    l_stadium_right_2: green
+- duration: 0.02
+  lights:
+    l_stadium_left_2: stop
+    l_stadium_right_2: stop
+    l_stadium_left_1: green
+    l_stadium_right_1: green
+- duration: 0.02
+  lights:
+    l_stadium_left_1: stop
+    l_stadium_right_1: stop
+

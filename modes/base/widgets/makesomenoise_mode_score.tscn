@@ -48,3 +48,4 @@ script = ExtResource("4_66d6i")
 variable_name = "mode_makesomenoise_score"
 comma_separate = true
 min_digits = 1
+initialize_empty = false

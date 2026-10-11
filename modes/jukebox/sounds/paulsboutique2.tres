@@ -1,0 +1,7 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=2 format=3 uid="uid://dib47uw3ackaw"]
+
+[ext_resource type="AudioStream" uid="uid://b0e2y7o5u33ou" path="res://modes/jukebox/sounds/paulsboutique2.ogg" id="1_g7wj2"]
+
+[resource]
+streams_count = 1
+stream_0/stream = ExtResource("1_g7wj2")

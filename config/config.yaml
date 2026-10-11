@@ -98,6 +98,10 @@ machine_vars:
     initial_value: 0
     persist: True
     value_type: int
+  this_game_player_callouts:
+    initial_value: 0
+    persist: True
+    value_type: int
 
 
 playfields:
@@ -180,11 +184,27 @@ ball_saves:
     auto_launch: True
     balls_to_save: -1
     early_ball_save_events: left_outlane_hit, right_outlane_hit
-  instrument_collect:
-    active_time: 10s
+  instrument_boombox_collect:
+    active_time: 6s
     hurry_up_time: 3s
     grace_period: 1s
-    enable_events: microphone_collected, boombox_collected, turntable_collected
+    enable_events: boombox_collected
+    auto_launch: True
+    balls_to_save: -1
+    early_ball_save_events: left_outlane_hit, right_outlane_hit
+  instrument_turntable_collect:
+    active_time: 6s
+    hurry_up_time: 3s
+    grace_period: 1s
+    enable_events: turntable_collected
+    auto_launch: True
+    balls_to_save: -1
+    early_ball_save_events: left_outlane_hit, right_outlane_hit
+  instrument_microphone_collect:
+    active_time: 6s
+    hurry_up_time: 3s
+    grace_period: 1s
+    enable_events: microphone_collected
     auto_launch: True
     balls_to_save: -1
     early_ball_save_events: left_outlane_hit, right_outlane_hit
@@ -250,6 +270,8 @@ modes:
   - end_mode
   - sureshot
   - match
+#  - jukebox
+#  - gamemodeselectcarousel
 
 
 settings:
@@ -277,20 +299,20 @@ settings:
   settle_time:
     label: "Time Tilt Bob Takes to Settle (Start Next Ball)"
     values:
-      3000: "3 Seconds"
-      6000: "6 Seconds (Default)"
-      10000: "10 Seconds"
-    default: 6000
+      6000: "6 Seconds"
+      10000: "10 Seconds (Default)"
+      15000: "15 Seconds"
+    default: 10000
     key_type: int
     sort: 610
   multiple_hit_window:
     label: "Tilt Sensitivity"
     values:
-      300: "Sensitive"
-      600: "Normal (Default)"
-      900: "Insensitive"
-      1200: "Very Insensitive"
-    default: 600
+      600: "Sensitive"
+      1200: "Normal (Default)"
+      2000: "Insensitive"
+      3000: "Very Insensitive"
+    default: 1200
     key_type: int
     sort: 620
   balls_per_game:
@@ -338,6 +360,8 @@ event_player:
     game_just_played:
       action: set_machine
       int: 0
+  mode_attract_started: enable_always_on_drivers
+  game_started: enable_always_on_drivers
 
 
 variable_player:
@@ -606,6 +630,24 @@ player_vars:
     initial_value: 0
   wizard_blocking_flag:
     initial_value: 0
+  superspins_active:
+    initial_value: 0
+  supercombos_active:
+    initial_value: 0
+  superdrops_active:
+    initial_value: 0
+  superpops_active:
+    initial_value: 0
+  superstandups_active:
+    initial_value: 0
+  makesomenoise_wave:
+    initial_value: 1
+  active_mode:
+    value_type: str
+    initial_value: "Base Mode"
+  active_mode_objective:
+    value_type: str
+    initial_value: "Hit Spinner to Charge Battery, Scoop to Start Mode"
 
 light_settings:
   color_correction_profiles:

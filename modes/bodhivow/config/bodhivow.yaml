@@ -93,6 +93,12 @@ variable_player:
     battery_charged_yesorno:
       int: 0
       action: set
+    active_mode:
+      string: "Bodhisattva Vow"
+      action: set
+    active_mode_objective:
+      string: "Cycle Colors to Add Time"
+      action: set
   counter_bodhisattvavow_area1_counter_hit:
     score: 100000 * current_player.playfield_x * current_player.bodhisattvavow_mode_multiplier * current_player.bodhisattvavow_area1_counter
     mode_bodhisattvavow_score: 100000 * current_player.playfield_x * current_player.bodhisattvavow_mode_multiplier * current_player.bodhisattvavow_area1_counter

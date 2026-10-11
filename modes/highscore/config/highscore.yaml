@@ -45,7 +45,7 @@ high_score:
         - BODHISATTVA VOW CHAMPION
     - mode_sureshot_score:
         - SURE SHOT CHAMPION
-    - girls_bonus_score:
+    - girls_frenzy_score:
         - GIRLS FRENZY CHAMPION
     - highest_bonus:
         - BONUS CHAMPION
@@ -82,7 +82,7 @@ high_score:
       - MCA: 5000000
     mode_sureshot_score:
       - SLD: 5000000
-    girls_bonus_score:
+    girls_frenzy_score:
       - GRL: 50000
     highest_bonus:
       - JDH: 500000
